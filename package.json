@@ -19,6 +19,7 @@
 		"@babel/cli": "^7.11.5",
 		"@babel/core": "^7.11.5",
 		"@babel/plugin-proposal-class-properties": "^7.10.4",
+		"@babel/plugin-proposal-decorators": "^7.10.5",
 		"@babel/plugin-proposal-object-rest-spread": "^7.11.0",
 		"@babel/preset-env": "^7.11.5",
 		"@babel/preset-typescript": "^7.10.4",
@@ -32,6 +33,7 @@
 		"eslint": "^7.8.0",
 		"eslint-config-prettier": "^6.11.0",
 		"eslint-plugin-prettier": "^3.1.4",
+		"extract-loader": "^5.1.0",
 		"html-webpack-plugin": "^4.3.0",
 		"jasmine-ajax": "^4.0.0",
 		"jasmine-core": "^3.5.0",
@@ -41,6 +43,7 @@
 		"karma-jasmine": "^3.3.1",
 		"karma-sourcemap-loader": "^0.3.7",
 		"karma-webpack": "^4.0.2",
+		"lit-scss-loader": "^1.0.1",
 		"mini-css-extract-plugin": "^0.11.0",
 		"node-sass": "^4.14.1",
 		"prettier": "^2.1.1",
@@ -55,6 +58,7 @@
 		"whatwg-fetch": "^3.2.0"
 	},
 	"dependencies": {
+		"lit-element": "^2.4.0",
 		"regenerator-runtime": "^0.13.5"
 	}
 }
