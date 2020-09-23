@@ -1,13 +1,13 @@
-import { LitElement, html, customElement, TemplateResult, CSSResult } from 'lit-element';
-import { styles } from '../../config/styles';
+import { LitElement, html, customElement, TemplateResult } from 'lit-element';
+import '../../../styles/components/navItem.scss';
 
 @customElement('nav-item')
 export class NavItem extends LitElement {
-	static get styles(): CSSResult {
-		return styles.navItem;
-	}
-
 	render(): TemplateResult {
 		return html`<slot></slot>`;
+	}
+
+	createRenderRoot(): LitElement {
+		return this;
 	}
 }

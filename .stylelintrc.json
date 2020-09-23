@@ -3,5 +3,6 @@
 	"rules": {
 		"indentation": "tab",
 		"number-leading-zero": null
-	}
+	},
+	"ignoreFiles": "./src/styles/vendors/_normalize.scss"
 }
