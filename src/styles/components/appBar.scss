@@ -1,0 +1,17 @@
+:host {
+	display: grid;
+	grid-template-columns: auto;
+	align-items: center;
+	height: 2.5rem;
+	padding: 1rem 2rem;
+	border-radius: 0 0 2rem 2rem;
+	-webkit-box-shadow: $shadow-1;
+	-moz-box-shadow: $shadow-1;
+	box-shadow: $shadow-1;
+}
+
+.logo {
+	align-self: center;
+	height: 1.5rem;
+	padding: 0.5rem;
+}
