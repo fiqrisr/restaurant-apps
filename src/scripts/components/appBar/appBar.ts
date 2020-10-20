@@ -1,4 +1,5 @@
-import { LitElement, html, property, customElement, TemplateResult } from 'lit-element';
+import { LitElement, html, property, customElement, TemplateResult, CSSResult } from 'lit-element';
+import { styles } from '../../config/styles';
 
 @customElement('app-bar')
 export class AppBar extends LitElement {
@@ -8,22 +9,22 @@ export class AppBar extends LitElement {
 	@property({ type: String, reflect: true })
 	label!: string;
 
+	static get styles(): CSSResult {
+		return styles.appBar;
+	}
+
 	render(): TemplateResult {
-		return html` <div class="app-bar">
-			<div class="app-bar--brand">
-				<img src="${this.logo}" alt="RestoZoo brand" class="app-bar--logo" />
-				<div class="app-bar--label">${this.label}</div>
+		return html`
+			<div class="brand">
+				<img src="${this.logo}" alt="RestoZoo brand" class="logo" />
+				<div class="label">${this.label}</div>
 			</div>
 			<slot name="right"></slot>
-		</div>`;
+		`;
 	}
 
 	attributeChangedCallback(name: string, oldval: string, newval: string): void {
 		super.attributeChangedCallback(name, oldval, newval);
 		this.dispatchEvent(new Event(`${name}-changed`));
-	}
-
-	createRenderRoot(): LitElement {
-		return this;
 	}
 }
