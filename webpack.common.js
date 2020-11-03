@@ -4,6 +4,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
 
+function srcPath(subdir) {
+	return path.join(__dirname, 'src', subdir);
+}
+
 module.exports = {
 	entry: path.resolve(__dirname, 'src/scripts/index.ts'),
 	output: {
@@ -11,6 +15,10 @@ module.exports = {
 		filename: '[name].[contenthash].js'
 	},
 	resolve: {
+		alias: {
+			'@': srcPath('.'),
+			components: srcPath('scripts/components')
+		},
 		extensions: ['.ts', '.tsx', '.js']
 	},
 	module: {
@@ -35,6 +43,8 @@ module.exports = {
 				}
 			]
 		}),
-		new StylelintPlugin()
+		new StylelintPlugin({
+			files: '**/*.css'
+		})
 	]
 };

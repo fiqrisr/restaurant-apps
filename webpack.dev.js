@@ -6,7 +6,8 @@ const common = require('./webpack.common');
 module.exports = merge(common, {
 	mode: 'development',
 	devServer: {
-		contentBase: path.resolve(__dirname, 'dist')
+		contentBase: path.resolve(__dirname, 'dist'),
+		compress: false
 	},
 	module: {
 		rules: [
