@@ -1,0 +1,10 @@
+:host {
+	margin: 1rem;
+}
+
+ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+}

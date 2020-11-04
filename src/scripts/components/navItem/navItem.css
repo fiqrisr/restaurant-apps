@@ -1,0 +1,13 @@
+:host {
+	margin: 0 1rem;
+	padding: 1rem 2rem;
+}
+
+:host(:hover) {
+	background-color: #ffa;
+}
+
+a {
+	color: var(--text-1);
+	text-decoration: none;
+}

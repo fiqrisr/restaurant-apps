@@ -1,5 +1,12 @@
-import { LitElement, html, property, customElement, TemplateResult, CSSResult } from 'lit-element';
-import { styles } from '../../config/styles';
+import {
+	LitElement,
+	html,
+	property,
+	customElement,
+	TemplateResult,
+	CSSResultArray
+} from 'lit-element';
+import { styles } from '@/scripts/config';
 
 @customElement('app-bar')
 export class AppBar extends LitElement {
@@ -9,17 +16,19 @@ export class AppBar extends LitElement {
 	@property({ type: String, reflect: true })
 	label!: string;
 
-	static get styles(): CSSResult {
-		return styles.appBar;
+	static get styles(): CSSResultArray {
+		return [styles.shared, styles.appBar];
 	}
 
 	render(): TemplateResult {
 		return html`
-			<div class="brand">
-				<img src="${this.logo}" alt="RestoZoo brand" class="logo" />
-				<div class="label">${this.label}</div>
+			<div class="container app-bar">
+				<div class="brand">
+					<img src="${this.logo}" alt="RestoZoo brand" class="logo" />
+					<div class="label">${this.label}</div>
+				</div>
+				<slot name="right"></slot>
 			</div>
-			<slot name="right"></slot>
 		`;
 	}
 

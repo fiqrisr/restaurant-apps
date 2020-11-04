@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
 
@@ -27,6 +28,25 @@ module.exports = {
 				test: /\.(ts|js)x?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader'
+			},
+			{
+				test: /\.css|\.s(c|a)ss$/,
+				use: [
+					{
+						loader: 'lit-scss-loader',
+						options: {
+							minify: true
+						}
+					},
+					'extract-loader',
+					'css-loader',
+					'sass-loader'
+				]
+			},
+			{
+				test: /\.css$/,
+				exclude: path.resolve(__dirname, 'src/scripts'),
+				use: [MiniCssExtractPlugin.loader, 'css-loader']
 			}
 		]
 	},
@@ -43,8 +63,12 @@ module.exports = {
 				}
 			]
 		}),
+		new MiniCssExtractPlugin({
+			filename: '[name].[hash].css',
+			chunkFilename: '[id].[hash].css'
+		}),
 		new StylelintPlugin({
-			files: '**/*.css'
+			files: 'src/**/*.css'
 		})
 	]
 };

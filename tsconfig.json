@@ -13,7 +13,12 @@
 		"target": "es2015",
 		"module": "commonjs",
 		"strict": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["src/*"],
+			"components/*": ["src/scripts/components/*"]
+		}
 	},
 	"include": ["src/scripts/**/*"],
 	"exclude": ["node_modules", "dist"]

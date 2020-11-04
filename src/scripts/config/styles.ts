@@ -1,6 +1,12 @@
 // @ts-nocheck
-import appBar from '../components/appBar/appBar.css';
+import shared from '@/scripts/config/sharedStyles.css';
+import appBar from 'components/appBar/appBar.css';
+import navMenu from 'components/navMenu/navMenu.css';
+import navItem from 'components/navItem/navItem.css';
 
 export const styles = {
-	appBar
+	shared,
+	appBar,
+	navMenu,
+	navItem
 };
