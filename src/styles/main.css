@@ -4,10 +4,15 @@
 	box-sizing: border-box;
 }
 
-html {
+html,
+body {
+	--neutral-1: 0, 0, 0;
+	--neutral-2: 255, 255, 255;
+
 	--font-brand: normal 1.6rem 'Pacifico', cursive;
 	--font-header-1: bold 1.6rem/2.4rem 'Roboto', sans-serif;
-	--font-body-1: normal 1.6rem 'Roboto', sans-serif;
+	--font-header-2: bold 1.4rem/2.4rem 'Roboto', sans-serif;
+	--font-body-1: normal 1.6rem/2.4rem 'Roboto', sans-serif;
 	--font-body-2: normal 1.2rem/1.6rem 'Roboto', sans-serif;
 
 	--text-1: rgba(0, 0, 0, 0.9);
@@ -17,14 +22,56 @@ html {
 	--shadow-1: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.05);
 
 	/* 
-	//Define 1 rem
-	//1 rem = 10px; 10px/16px == 62.5%
+	// Define 1 rem
+	// 1 rem = 10px; 10px/16px == 62.5%
 	*/
 	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-weight: 400;
+	height: 100%;
+	line-height: 2.4rem;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+	width: 100%;
 }
 
 body {
+	color: var(--text-1);
 	font: var(--font-body-1);
-	margin: 0;
-	padding: 0;
+}
+
+/* typography */
+@font-face {
+	font-family: 'md-icons';
+	src: local('Material Icons'), local('MaterialIcons-Regular'),
+		url('../public/fonts/md-icons.woff2') format('woff2'),
+		url('../public/fonts/md-icons.woff') format('woff');
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+	background-color: transparent;
+	height: 8px;
+	visibility: hidden;
+	width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+	background-color: rgba(var(--neutral-1), 0.05);
+	border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: rgba(var(--neutral-1), 0.1);
+	border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:active,
+*::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(var(--neutral-1), 0.2);
 }

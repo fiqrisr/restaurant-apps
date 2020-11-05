@@ -8,8 +8,8 @@ import {
 } from 'lit-element';
 import { styles } from '@/scripts/config';
 
-@customElement('app-bar')
-export class AppBar extends LitElement {
+@customElement('rz-app-bar')
+export class rzAppBar extends LitElement {
 	@property({ type: String, reflect: true })
 	logo!: string;
 

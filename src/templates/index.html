@@ -10,15 +10,19 @@
 </head>
 
 <body>
-	<div id="app">
-		<app-bar logo="../public/logo.png" label="RestoZoo">
-			<nav-menu slot="right">
-				<nav-item href="#" title="Home"></nav-item>
-				<nav-item href="#" title="Favorites"></nav-item>
-				<nav-item href="#" title="About"></nav-item>
-			</nav-menu>
-		</app-bar>
+	<div class="app">
+		<header>
+			<rz-app-bar logo="../public/logo.png" label="RestoZoo">
+				<rz-nav-menu slot="right">
+					<rz-nav-item href="#">Home</rz-nav-item>
+					<rz-nav-item href="#">Favorites</rz-nav-item>
+					<rz-nav-item href="https://github.com/fiqrisr"" openInNewTab>About</rz-nav-item>
+				</rz-nav-menu>
+			</rz-app-bar>
+		</header>
 	</div>
+	<rz-icon icon="menu" size='m' button></rz-icon>
+	
 </body>
 
 </html>

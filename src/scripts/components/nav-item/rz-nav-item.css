@@ -1,13 +1,16 @@
 :host {
 	margin: 0 1rem;
-	padding: 1rem 2rem;
 }
 
 :host(:hover) {
 	background-color: #ffa;
+	border-radius: 7px;
 }
 
 a {
 	color: var(--text-1);
+	display: block;
+	padding: 1.8rem 2rem;
+	text-align: center;
 	text-decoration: none;
 }
