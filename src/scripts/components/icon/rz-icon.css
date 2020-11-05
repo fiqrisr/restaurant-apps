@@ -1,0 +1,64 @@
+:host {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	color: var(--text-1);
+	content: '';
+	font-family: 'md-icons';
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: grayscale;
+	height: max-content;
+	line-height: 1;
+	min-height: max-content;
+	min-width: max-content;
+	opacity: 0.9;
+	overflow: hidden;
+	text-rendering: optimizeLegibility;
+	width: max-content;
+}
+
+:host([button]) {
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+:host([disabled]) {
+	opacity: 0.2;
+	pointer-events: none;
+}
+
+/* size */
+:host([size='xl']) {
+	font-size: 48px;
+	height: 48px;
+	width: 48px;
+}
+
+:host([size='l']) {
+	font-size: 32px;
+	height: 32px;
+	width: 32px;
+}
+
+:host([size='m']) {
+	font-size: 24px;
+	height: 24px;
+	width: 24px;
+}
+
+:host([size='s']) {
+	font-size: 16px;
+	height: 16px;
+	width: 16px;
+}
+
+/* hover inputs */
+@media (hover: hover) {
+	:host([button]:hover:not(:active)) {
+		opacity: 0.9;
+	}
+}
+
+:host([icon='menu'])::before {
+	content: '\\e5d2';
+}

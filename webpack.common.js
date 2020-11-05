@@ -47,6 +47,10 @@ module.exports = {
 				test: /\.css$/,
 				exclude: path.resolve(__dirname, 'src/scripts'),
 				use: [MiniCssExtractPlugin.loader, 'css-loader']
+			},
+			{
+				test: /\.(woff|woff2|ttf|eot)$/,
+				loader: 'file-loader'
 			}
 		]
 	},
