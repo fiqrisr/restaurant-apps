@@ -46,3 +46,28 @@ ul {
 	width: 100vw;
 	z-index: 30;
 }
+
+@media (min-width: 768px) {
+	:host {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		margin: 0 1rem;
+	}
+
+	button {
+		display: none;
+	}
+
+	ul {
+		background: none;
+		box-shadow: none;
+		display: flex;
+		flex-direction: row;
+		height: auto;
+		list-style: none;
+		padding: 0;
+		position: static;
+		width: auto;
+	}
+}

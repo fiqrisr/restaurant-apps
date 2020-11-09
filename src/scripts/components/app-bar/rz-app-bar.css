@@ -16,6 +16,12 @@
 	justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+	.app-bar {
+		width: 100%;
+	}
+}
+
 .brand {
 	align-items: center;
 	display: flex;
