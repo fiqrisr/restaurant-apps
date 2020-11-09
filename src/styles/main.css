@@ -49,8 +49,7 @@ body {
 @font-face {
 	font-family: 'md-icons';
 	src: local('Material Icons'), local('MaterialIcons-Regular'),
-		url('../public/fonts/md-icons.woff2') format('woff2'),
-		url('../public/fonts/md-icons.woff') format('woff');
+		url('../fonts/md-icons.woff2') format('woff2'), url('../fonts/md-icons.woff') format('woff');
 }
 
 /* scrollbar */

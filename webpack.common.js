@@ -13,7 +13,8 @@ module.exports = {
 	entry: path.resolve(__dirname, 'src/scripts/index.ts'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].[contenthash].js'
+		filename: '[name].[contenthash].js',
+		publicPath: ''
 	},
 	resolve: {
 		alias: {
@@ -68,8 +69,8 @@ module.exports = {
 			]
 		}),
 		new MiniCssExtractPlugin({
-			filename: '[name].[hash].css',
-			chunkFilename: '[id].[hash].css'
+			filename: '[name].[fullhash].css',
+			chunkFilename: '[id].[fullhash].css'
 		}),
 		new StylelintPlugin({
 			files: 'src/**/*.css'
