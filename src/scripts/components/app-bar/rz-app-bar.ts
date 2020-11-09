@@ -25,7 +25,9 @@ export class rzAppBar extends LitElement {
 			<div class="container app-bar">
 				<div class="brand">
 					<img src="${this.logo}" alt="RestoZoo brand" class="logo" />
-					<div class="label">${this.label}</div>
+					<div class="label">
+						<a href="#">${this.label}</a>
+					</div>
 				</div>
 				<slot name="right"></slot>
 			</div>

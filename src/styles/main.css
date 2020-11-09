@@ -6,8 +6,8 @@
 
 html,
 body {
-	--neutral-1: 0, 0, 0;
-	--neutral-2: 255, 255, 255;
+	--neutral-1: rgb(0, 0, 0);
+	--neutral-2: rgb(255, 255, 255);
 
 	--font-brand: normal 1.6rem 'Pacifico', cursive;
 	--font-header-1: bold 1.6rem/2.4rem 'Roboto', sans-serif;
