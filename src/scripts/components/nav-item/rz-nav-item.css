@@ -3,8 +3,9 @@
 }
 
 :host(:hover) {
-	background-color: #ffa;
+	background-color: var(--accent-1);
 	border-radius: 7px;
+	color: var(--neutral-2);
 }
 
 a {

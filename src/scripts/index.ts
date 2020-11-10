@@ -3,6 +3,8 @@ import '@/styles/main.css';
 
 // Components
 import 'components/app-bar';
+import 'components/button';
 import 'components/icon';
 import 'components/nav-menu';
 import 'components/nav-item';
+import 'components/hero-image';

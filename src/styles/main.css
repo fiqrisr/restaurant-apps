@@ -9,6 +9,12 @@ body {
 	--neutral-1: rgb(0, 0, 0);
 	--neutral-2: rgb(255, 255, 255);
 
+	--accent-1: rgb(255, 77, 77);
+	--accent-2: rgb(179, 54, 54);
+
+	--gradient-color-1: rgba(170, 7, 107, 0.5);
+	--gradient-color-2: rgba(97, 4, 95, 0.5);
+
 	--font-brand: normal 1.6rem 'Pacifico', cursive;
 	--font-header-1: bold 1.6rem/2.4rem 'Roboto', sans-serif;
 	--font-header-2: bold 1.4rem/2.4rem 'Roboto', sans-serif;
@@ -20,6 +26,8 @@ body {
 	--text-3: rgba(0, 0, 0, 0.2);
 
 	--shadow-1: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.05);
+	/* prettier-ignore */
+	--gradient-1: linear-gradient(to right bottom, var(--gradient-color-1), var(--gradient-color-2));
 
 	/* 
 	// Define 1 rem

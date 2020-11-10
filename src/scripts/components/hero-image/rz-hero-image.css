@@ -1,0 +1,30 @@
+.hero-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+	position: relative;
+	width: 100%;
+}
+
+.hero-text {
+	color: var(--neutral-2);
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+}
+
+/* stylelint-disable selector-no-qualifying-type */
+slot[name='title'] {
+	font-size: 2.4rem;
+	letter-spacing: 0.2rem;
+	line-height: 5rem;
+}
+
+slot[name='tagline'] {
+	font-size: 2rem;
+	line-height: 2.4rem;
+}

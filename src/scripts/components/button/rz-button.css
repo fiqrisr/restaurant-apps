@@ -1,0 +1,26 @@
+:host {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}
+
+button {
+	background-color: var(--accent-2);
+	border: 0;
+	border-radius: 8px;
+	color: var(--neutral-2);
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.6rem;
+	padding: 10px 20px;
+}
+
+button:hover {
+	background-color: var(--accent-1);
+}
+
+a {
+	color: var(--neutral-2);
+	text-decoration: none;
+}

@@ -10,17 +10,23 @@
 </head>
 
 <body>
-	<div class="app">
-		<header>
-			<rz-app-bar logo="../public/logo.png" label="RestoZoo">
-				<rz-nav-menu slot="right">
-					<rz-nav-item href="#">Home</rz-nav-item>
-					<rz-nav-item href="#">Favorites</rz-nav-item>
-					<rz-nav-item href="https://github.com/fiqrisr" openInNewTab>About</rz-nav-item>
-				</rz-nav-menu>
-			</rz-app-bar>
-		</header>
-	</div>
+	<header>
+		<rz-app-bar logo="../public/logo.png" label="RestoZoo">
+			<rz-nav-menu slot="right">
+				<rz-nav-item href="#">Home</rz-nav-item>
+				<rz-nav-item href="#">Favorites</rz-nav-item>
+				<rz-nav-item href="https://github.com/fiqrisr" openInNewTab>About Us</rz-nav-item>
+			</rz-nav-menu>
+		</rz-app-bar>
+
+		<rz-hero-image image="../public/images/heros/hero-image.jpg">
+			<h1 slot="title">Find Your Favorite Restaurant</h1>
+			<p slot="tagline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, quaerat?</p>
+			<div style="margin-top: 40px;">
+				<rz-button label="Let's Eat!" isLink href="#main"></rz-button>
+			</div>
+		</rz-hero-image>
+	</header>
 </body>
 
 </html>
