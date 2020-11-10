@@ -1,0 +1,28 @@
+:host {
+	color: var(--text-1);
+	transition: var(--transition-1);
+}
+
+:host([size='body-1']) {
+	font: var(--font-body-1);
+}
+
+:host([size='body-2']) {
+	font: var(--font-body-2);
+}
+
+:host([size='header-1']) {
+	font: var(--font-header-1);
+}
+
+:host([size='header-2']) {
+	font: var(--font-header-2);
+}
+
+:host([size='big-1']) {
+	display: block;
+	font: var(--font-big-1);
+	letter-spacing: 1px;
+	margin: 20px auto;
+	text-align: center;
+}
