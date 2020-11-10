@@ -22,7 +22,6 @@
 :host([size='big-1']) {
 	display: block;
 	font: var(--font-big-1);
-	letter-spacing: 1px;
-	margin: 20px auto;
+	margin: 20px auto 40px;
 	text-align: center;
 }

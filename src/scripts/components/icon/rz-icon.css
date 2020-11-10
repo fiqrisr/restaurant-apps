@@ -8,10 +8,8 @@
 	-webkit-font-smoothing: auto;
 	-moz-osx-font-smoothing: grayscale;
 	height: max-content;
-	line-height: 1;
 	min-height: max-content;
 	min-width: max-content;
-	opacity: 0.9;
 	overflow: hidden;
 	text-rendering: optimizeLegibility;
 	width: max-content;
@@ -61,4 +59,20 @@
 
 :host([icon='menu'])::before {
 	content: '\\e5d2';
+}
+
+:host([icon='star'])::before {
+	content: '\\e838';
+}
+
+:host([icon='star_border'])::before {
+	content: '\\e83a';
+}
+
+:host([icon='star_half'])::before {
+	content: '\\e839';
+}
+
+:host([icon='stars'])::before {
+	content: '\\e8d0';
 }

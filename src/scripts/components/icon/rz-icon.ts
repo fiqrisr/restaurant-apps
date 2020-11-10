@@ -25,4 +25,15 @@ export class rzIcon extends LitElement {
 	render(): TemplateResult {
 		return html``;
 	}
+
+	attributeChangedCallback(name: string, oldval: string, newval: string): void {
+		super.attributeChangedCallback(name, oldval, newval);
+
+		if (name == 'color') this.style.color = this.color;
+		else if (name == 'icon' && newval.indexOf('url') > -1) this.handleIcon(newval);
+	}
+
+	private handleIcon(val: string): void {
+		this.style.backgroundImage = val;
+	}
 }

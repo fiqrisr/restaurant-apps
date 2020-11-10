@@ -11,7 +11,7 @@ export class rzNavMenu extends LitElement {
 		return html`<nav>
 			<button @click="${this.openNav}"><rz-icon icon="menu" size="l"></rz-icon></button>
 			<ul>
-				<slot></slot>
+				<slot @click="${this.closeNav}"></slot>
 			</ul>
 			<div @click="${this.closeNav}" class="overlay"></div>
 		</nav>`;

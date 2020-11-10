@@ -1,10 +1,14 @@
 :host {
 	margin: 0 1rem;
+	transition: var(--transition-1);
 }
 
 :host(:hover) {
 	background-color: var(--accent-3);
 	border-radius: 7px;
+}
+
+:host(:hover) a {
 	color: var(--neutral-2);
 }
 

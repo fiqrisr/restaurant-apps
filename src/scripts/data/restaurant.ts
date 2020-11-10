@@ -1,4 +1,4 @@
-export const restaurant = [
+export const restaurants = [
 	{
 		id: '6c7bqjgi84kcowlqdz',
 		name: 'Bring Your Phone Cafe',
