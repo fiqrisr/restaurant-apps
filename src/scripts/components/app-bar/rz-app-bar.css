@@ -7,7 +7,7 @@
 	height: 7.5rem;
 	padding: 0 2rem;
 	position: relative;
-	z-index: 90;
+	z-index: 99;
 }
 
 .app-bar {

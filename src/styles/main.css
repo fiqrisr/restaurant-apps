@@ -27,7 +27,7 @@ body {
 	--text-2: rgba(0, 0, 0, 0.6);
 	--text-3: rgba(0, 0, 0, 0.2);
 
-	--shadow-1: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.05);
+	--shadow-1: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 	--shadow-2: 0 1px 35px 0 rgba(0, 0, 0, 0.3);
 	/* prettier-ignore */
 	--gradient-1: linear-gradient(to right bottom, var(--gradient-color-1), var(--gradient-color-2));
@@ -127,4 +127,17 @@ body {
 
 main {
 	padding: 40px 0;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	margin: 20px 0;
+	text-align: center;
+}
+
+/* stylelint-disable selector-no-qualifying-type */
+footer rz-icon[icon='favorite'] {
+	display: inline-block;
+	padding: 0 1px;
 }

@@ -3,14 +3,12 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	color: var(--text-1);
-	content: '';
 	font-family: 'md-icons';
 	-webkit-font-smoothing: auto;
 	-moz-osx-font-smoothing: grayscale;
 	height: max-content;
 	min-height: max-content;
 	min-width: max-content;
-	overflow: hidden;
 	text-rendering: optimizeLegibility;
 	width: max-content;
 }
@@ -75,4 +73,12 @@
 
 :host([icon='stars'])::before {
 	content: '\\e8d0';
+}
+
+:host([icon='favorite'])::before {
+	content: '\\e87d';
+}
+
+:host([icon='favorite_border'])::before {
+	content: '\\e87e';
 }

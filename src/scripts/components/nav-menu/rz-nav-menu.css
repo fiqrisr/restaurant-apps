@@ -16,7 +16,7 @@ button {
 
 ul {
 	background-color: var(--neutral-2);
-	box-shadow: var(--shadow-1);
+	box-shadow: 0 30px 38px rgba(0, 0, 0, 0.3), 0 30px 12px rgba(0, 0, 0, 0.22);
 	display: flex;
 	flex-direction: column;
 	height: 100vh;

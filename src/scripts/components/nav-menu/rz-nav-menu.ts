@@ -28,6 +28,9 @@ export class rzNavMenu extends LitElement {
 			.querySelector('rz-nav-menu')
 			?.shadowRoot?.querySelector('ul')
 			?.classList.toggle('opened');
+
+		document.body.style.height = '100%';
+		document.body.style.overflow = 'hidden';
 	}
 
 	closeNav(): void {
@@ -41,5 +44,8 @@ export class rzNavMenu extends LitElement {
 			.querySelector('rz-nav-menu')
 			?.shadowRoot?.querySelector('ul')
 			?.classList.remove('opened');
+
+		document.body.style.height = '';
+		document.body.style.overflow = '';
 	}
 }
