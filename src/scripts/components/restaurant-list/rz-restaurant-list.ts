@@ -3,6 +3,15 @@ import { styles } from '@/scripts/config';
 import { restaurants } from '@/scripts/data/restaurant';
 // import { rzRestaurantCard } from 'components/restaurant-card';
 
+const restaurantTypes = [
+	'casual dining',
+	'fast food',
+	'fast casual',
+	'ethnic',
+	'family style',
+	'fine dining'
+];
+
 @customElement('rz-restaurant-list')
 export class rzRestaurantList extends LitElement {
 	static get styles(): CSSResult {
@@ -16,6 +25,9 @@ export class rzRestaurantList extends LitElement {
 					<rz-restaurant-card
 						.id="${restaurant.id}"
 						.image="${restaurant.pictureId}"
+						.category="${restaurantTypes[
+							Math.floor(Math.random() * restaurantTypes.length)
+						]}"
 						.title="${restaurant.name}"
 						.subTitle="${restaurant.city}"
 						.description="${this.truncateText(restaurant.description, 150)}"

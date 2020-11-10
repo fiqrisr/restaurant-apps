@@ -10,6 +10,9 @@ export class rzRestaurantCard extends LitElement {
 	image!: string;
 
 	@property({ type: String, reflect: true })
+	category!: string;
+
+	@property({ type: String, reflect: true })
 	title!: string;
 
 	@property({ type: String, reflect: true })
@@ -33,8 +36,8 @@ export class rzRestaurantCard extends LitElement {
 					<div class="icon"><rz-icon icon="star" size="s" color="var(--neutral-2)"></rz-icon></div>
 					<div class="rating-value">${this.rating}</div>
 				</div>
-				<img src="${this.image}"/>
-				<div class="category">Photos</div>
+				<img src="${this.image}" alt="${this.title} picture"/>
+				<div class="category">${this.category}</div>
 			</div>
 
 			<div class="content">

@@ -42,6 +42,7 @@ a {
 	background: var(--neutral-1);
 	height: 230px;
 	overflow: hidden;
+	position: relative;
 }
 
 .thumbnail img {
@@ -53,14 +54,14 @@ a {
 
 .category {
 	background: var(--accent-1);
+	bottom: 0;
 	color: #fff;
 	font-size: 1.4rem;
 	font-weight: 600;
 	left: 0;
-	padding: 10px 15px;
+	padding: 5px 15px;
 	position: absolute;
 	text-transform: uppercase;
-	top: 186px;
 }
 
 .content {

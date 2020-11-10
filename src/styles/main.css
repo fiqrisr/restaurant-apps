@@ -87,8 +87,24 @@ body {
 .container {
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.skip-link {
+	background-color: var(--accent-1);
+	color: var(--neutral-2);
+	display: inline-block;
+	left: 0;
+	padding: 10px;
+	position: absolute;
+	top: -60px;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	left: 20px;
+	top: 20px;
 }
 
 @media (min-width: 768px) {
