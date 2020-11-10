@@ -17,8 +17,10 @@ export class rzButton extends LitElement {
 	}
 
 	render(): TemplateResult {
-		return html`<button>
-			${this.isLink ? html` <a href="${this.href}">${this.label}</a> ` : html`${this.label}`}
-		</button>`;
+		return html`
+			${this.isLink
+				? html` <a href="${this.href}">${this.label}</a> `
+				: html`<button>${this.label}</button>`}
+		`;
 	}
 }

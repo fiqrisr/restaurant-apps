@@ -5,7 +5,8 @@
 	width: 100%;
 }
 
-button {
+button,
+a {
 	background-color: var(--accent-2);
 	border: 0;
 	border-radius: 8px;
@@ -16,7 +17,8 @@ button {
 	padding: 10px 20px;
 }
 
-button:hover {
+button:hover,
+a:hover {
 	background-color: var(--accent-1);
 }
 
