@@ -9,15 +9,41 @@ export class rzNavMenu extends LitElement {
 
 	render(): TemplateResult {
 		return html`<nav>
-			<button @click="${this.openNav}"><rz-icon icon="menu" size="l"></rz-icon></button>
+			<button
+				class="hamburger"
+				type="button"
+				aria-label="Menu"
+				aria-controls="navigation"
+				@click="${this.toggleNav}"
+			>
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
 			<ul>
-				<slot @click="${this.closeNav}"></slot>
+				<slot @click="${this.toggleNav}"></slot>
 			</ul>
-			<div @click="${this.closeNav}" class="overlay"></div>
+			<div @click="${this.toggleNav}" class="overlay"></div>
 		</nav>`;
 	}
 
-	openNav(): void {
+	animateMenuButton(): void {
+		const button = <HTMLElement>(
+			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('button')
+		);
+
+		button.classList.toggle('active');
+	}
+
+	toggleNav(): void {
+		this.animateMenuButton();
+
+		const navList = <HTMLElement>(
+			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('ul')
+		);
+
+		navList.style.visibility = navList.style.visibility === 'visible' ? 'hidden' : 'visible';
+
 		const overlay = <HTMLElement>(
 			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('.overlay')
 		);
@@ -29,23 +55,7 @@ export class rzNavMenu extends LitElement {
 			?.shadowRoot?.querySelector('ul')
 			?.classList.toggle('opened');
 
-		document.body.style.height = '100%';
-		document.body.style.overflow = 'hidden';
-	}
-
-	closeNav(): void {
-		const overlay = <HTMLElement>(
-			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('.overlay')
-		);
-
-		overlay.style.display = 'none';
-
-		document
-			.querySelector('rz-nav-menu')
-			?.shadowRoot?.querySelector('ul')
-			?.classList.remove('opened');
-
-		document.body.style.height = '';
-		document.body.style.overflow = '';
+		document.body.style.height = document.body.style.height === '' ? '100%' : '';
+		document.body.style.overflow = document.body.style.overflow === '' ? 'hidden' : '';
 	}
 }

@@ -7,7 +7,7 @@ export class rzNavItem extends LitElement {
 	href!: string;
 
 	@property({ type: Boolean, reflect: true })
-	openInNewTab!: boolean;
+	newTab!: boolean;
 
 	static get styles(): CSSResult {
 		return styles.navItem;
@@ -15,7 +15,7 @@ export class rzNavItem extends LitElement {
 
 	render(): TemplateResult {
 		return html`<li>
-			<a href="${this.href}" target="${this.openInNewTab ? '_blank' : ''}"><slot></slot></a>
+			<a href="${this.href}" target="${this.newTab ? '_blank' : ''}"><slot></slot></a>
 		</li>`;
 	}
 }
