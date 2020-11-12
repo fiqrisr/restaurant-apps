@@ -31,13 +31,8 @@ export class rzNavMenu extends LitElement {
 	}
 
 	firstUpdated(): void {
-		this.navList = <HTMLElement>(
-			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('ul')
-		);
-
-		this.navButton = <HTMLElement>(
-			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('button')
-		);
+		this.navList = <HTMLElement>this.shadowRoot?.querySelector('ul');
+		this.navButton = <HTMLElement>this.shadowRoot?.querySelector('button');
 	}
 
 	toggleNav(): void {

@@ -21,10 +21,7 @@ export class rzHeroImage extends LitElement {
 	}
 
 	firstUpdated(): void {
-		const hero = <HTMLElement>(
-			document.querySelector('rz-hero-image')?.shadowRoot?.querySelector('.hero-image')
-		);
-
+		const hero = <HTMLElement>this.shadowRoot?.querySelector('.hero-image');
 		hero.style.backgroundImage = `var(--gradient-1),url("${this.image}")`;
 	}
 }

@@ -15,7 +15,9 @@ export class rzNavItem extends LitElement {
 
 	render(): TemplateResult {
 		return html`<li>
-			<a href="${this.href}" target="${this.newTab ? '_blank' : ''}"><slot></slot></a>
+			${this.newTab
+				? html`<a href="${this.href}" target="_blank" rel="noopener"><slot></slot></a>`
+				: html`<a href="${this.href}"><slot></slot></a>`}
 		</li>`;
 	}
 }

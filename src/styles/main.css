@@ -92,22 +92,6 @@ body {
 	padding-right: 20px;
 }
 
-.skip-link {
-	background-color: var(--accent-1);
-	color: var(--neutral-2);
-	display: inline-block;
-	left: 0;
-	padding: 10px;
-	position: absolute;
-	top: -60px;
-	z-index: 100;
-}
-
-.skip-link:focus {
-	left: 20px;
-	top: 20px;
-}
-
 @media (min-width: 768px) {
 	.container {
 		width: 750px;
@@ -126,8 +110,35 @@ body {
 	}
 }
 
+@media (min-width: 1600px) {
+	.container {
+		width: 1500px;
+	}
+}
+
+.skip-link {
+	background-color: var(--accent-1);
+	color: var(--neutral-2);
+	display: inline-block;
+	left: 0;
+	padding: 10px;
+	position: absolute;
+	top: -60px;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	left: 20px;
+	top: 20px;
+}
+
 main {
 	padding: 40px 0;
+}
+
+.section-title {
+	font-size: 3.2rem;
+	text-align: center;
 }
 
 footer {
