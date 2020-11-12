@@ -1,16 +1,12 @@
 :host {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
 	color: var(--text-1);
-	font-family: 'md-icons';
+	font-family: 'fontello';
 	-webkit-font-smoothing: auto;
 	-moz-osx-font-smoothing: grayscale;
-	height: max-content;
 	min-height: max-content;
 	min-width: max-content;
+	text-decoration: inherit;
 	text-rendering: optimizeLegibility;
-	width: max-content;
 }
 
 :host([button]) {
@@ -43,9 +39,9 @@
 }
 
 :host([size='s']) {
-	font-size: 16px;
-	height: 16px;
-	width: 16px;
+	font-size: 14px;
+	height: 14px;
+	width: 14px;
 }
 
 /* hover inputs */
@@ -55,30 +51,26 @@
 	}
 }
 
-:host([icon='menu'])::before {
-	content: '\\e5d2';
-}
-
 :host([icon='star'])::before {
-	content: '\\e838';
+	content: '\\2605';
 }
 
-:host([icon='star_border'])::before {
-	content: '\\e83a';
+:host([icon='star-empty'])::before {
+	content: '\\2606';
 }
 
-:host([icon='star_half'])::before {
-	content: '\\e839';
+:host([icon='star-half'])::before {
+	content: '\\e701';
 }
 
-:host([icon='stars'])::before {
-	content: '\\e8d0';
+:host([icon='star-half-alt'])::before {
+	content: '\\f123';
 }
 
-:host([icon='favorite'])::before {
-	content: '\\e87d';
+:host([icon='heart'])::before {
+	content: '\\2665';
 }
 
-:host([icon='favorite_border'])::before {
-	content: '\\e87e';
+:host([icon='heart-empty'])::before {
+	content: '\\2661';
 }
