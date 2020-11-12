@@ -27,7 +27,7 @@ body {
 	--text-2: rgba(0, 0, 0, 0.6);
 	--text-3: rgba(0, 0, 0, 0.2);
 
-	--shadow-1: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+	--shadow-1: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 	--shadow-2: 0 1px 35px 0 rgba(0, 0, 0, 0.3);
 	/* prettier-ignore */
 	--gradient-1: linear-gradient(to right bottom, var(--gradient-color-1), var(--gradient-color-2));
@@ -56,11 +56,12 @@ body {
 
 /* typography */
 @font-face {
-	font-family: 'md-icons';
-	src: local('Material Icons'), local('MaterialIcons-Regular'),
-		url('../fonts/md-icons.woff2') format('woff2'), url('../fonts/md-icons.woff') format('woff');
+	font-family: 'fontello';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/fontello.woff2') format('woff2'),
+		url('../fonts/fontello.woff') format('woff');
 }
-
 /* scrollbar */
 *::-webkit-scrollbar {
 	background-color: transparent;
@@ -134,10 +135,4 @@ footer {
 	flex-direction: column;
 	margin: 20px 0;
 	text-align: center;
-}
-
-/* stylelint-disable selector-no-qualifying-type */
-footer rz-icon[icon='favorite'] {
-	display: inline-block;
-	padding: 0 1px;
 }

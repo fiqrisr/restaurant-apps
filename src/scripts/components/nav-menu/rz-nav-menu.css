@@ -2,7 +2,6 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin: 0 1rem;
 }
 
 .hamburger {
@@ -102,22 +101,17 @@ ul {
 	box-shadow: 0 30px 38px rgba(0, 0, 0, 0.3), 0 30px 12px rgba(0, 0, 0, 0.22);
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: 100%;
 	left: -260px;
 	list-style: none;
 	margin: 0;
-	padding: 0;
-	padding-top: 20px;
+	padding: 1.6rem;
 	position: fixed;
-	top: 75px;
+	top: 70px;
 	transition: all 0.5s ease-in;
 	visibility: hidden;
 	width: 250px;
 	z-index: 50;
-}
-
-.opened {
-	left: 0;
 }
 
 .overlay {
@@ -126,19 +120,21 @@ ul {
 	height: 100vh;
 	left: 0;
 	position: fixed;
-	top: 75px;
+	top: 70px;
 	width: 100vw;
 	z-index: 30;
 }
 
-@media (min-width: 768px) {
-	:host {
-		align-items: center;
-		display: flex;
-		justify-content: center;
-		margin: 0 1rem;
-	}
+.opened {
+	left: 0;
+	visibility: visible;
+}
 
+.opened + .overlay {
+	display: block;
+}
+
+@media (min-width: 768px) {
 	.hamburger {
 		display: none;
 	}
@@ -149,7 +145,6 @@ ul {
 		display: flex;
 		flex-direction: row;
 		height: auto;
-		list-style: none;
 		padding: 0;
 		position: static;
 		visibility: visible;

@@ -3,6 +3,9 @@ import { styles } from '@/scripts/config';
 
 @customElement('rz-nav-menu')
 export class rzNavMenu extends LitElement {
+	navButton!: HTMLElement;
+	navList!: HTMLElement;
+
 	static get styles(): CSSResult {
 		return styles.navMenu;
 	}
@@ -21,41 +24,30 @@ export class rzNavMenu extends LitElement {
 				</span>
 			</button>
 			<ul>
-				<slot @click="${this.toggleNav}"></slot>
+				<slot @click="${this.closeNav}"></slot>
 			</ul>
 			<div @click="${this.toggleNav}" class="overlay"></div>
 		</nav>`;
 	}
 
-	animateMenuButton(): void {
-		const button = <HTMLElement>(
-			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('button')
-		);
-
-		button.classList.toggle('active');
-	}
-
-	toggleNav(): void {
-		this.animateMenuButton();
-
-		const navList = <HTMLElement>(
+	firstUpdated(): void {
+		this.navList = <HTMLElement>(
 			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('ul')
 		);
 
-		navList.style.visibility = navList.style.visibility === 'visible' ? 'hidden' : 'visible';
-
-		const overlay = <HTMLElement>(
-			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('.overlay')
+		this.navButton = <HTMLElement>(
+			document.querySelector('rz-nav-menu')?.shadowRoot?.querySelector('button')
 		);
+	}
 
-		overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
-
-		document
-			.querySelector('rz-nav-menu')
-			?.shadowRoot?.querySelector('ul')
-			?.classList.toggle('opened');
-
+	toggleNav(): void {
+		this.navButton.classList.toggle('active');
+		this.navList.classList.toggle('opened');
 		document.body.style.height = document.body.style.height === '' ? '100%' : '';
 		document.body.style.overflow = document.body.style.overflow === '' ? 'hidden' : '';
+	}
+
+	closeNav(): void {
+		if (this.navList.classList.contains('opened')) this.toggleNav();
 	}
 }

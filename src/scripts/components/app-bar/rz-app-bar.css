@@ -4,39 +4,65 @@
 	box-shadow: var(--shadow-1);
 	display: flex;
 	flex-direction: row;
-	height: 7.5rem;
-	padding: 0 2rem;
-	position: relative;
+	justify-content: center;
+	min-height: 7rem;
+	position: fixed;
+	width: 100%;
 	z-index: 99;
 }
 
 .app-bar {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 90%;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
 	.app-bar {
-		width: 100%;
+		width: 750px;
+	}
+}
+
+@media (min-width: 992px) {
+	.app-bar {
+		width: 970px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.app-bar {
+		width: 1170px;
 	}
 }
 
 .brand {
 	align-items: center;
 	display: flex;
+	flex: 1;
 }
 
 .logo {
-	align-self: center;
 	padding: 0 0.5rem;
 	width: 5.5rem;
 }
 
-.label a {
+.label {
 	color: var(--text-1);
 	font: var(--font-brand);
 	font-size: 2.4rem;
 	margin-left: 1.2rem;
+}
+
+.label a {
+	color: inherit;
 	text-decoration: none;
+}
+
+/* stylelint-disable selector-no-qualifying-type */
+slot[name='right'] {
+	margin-left: auto;
 }
