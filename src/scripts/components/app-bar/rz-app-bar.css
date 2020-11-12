@@ -6,7 +6,7 @@
 	flex-direction: row;
 	justify-content: center;
 	min-height: 7rem;
-	position: fixed;
+	position: relative;
 	width: 100%;
 	z-index: 99;
 }

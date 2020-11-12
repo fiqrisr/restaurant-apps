@@ -24,13 +24,13 @@
 	opacity: 0.7;
 }
 
-.hamburger.is-active:hover {
+.hamburger.active:hover {
 	opacity: 0.7;
 }
 
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
+.hamburger.active .hamburger-inner,
+.hamburger.active .hamburger-inner::before,
+.hamburger.active .hamburger-inner::after {
 	background-color: #000;
 }
 
