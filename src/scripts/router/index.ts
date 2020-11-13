@@ -10,6 +10,14 @@ router.setRoutes([
 	{
 		path: '/favorites',
 		component: 'favorite-view'
+	},
+	{
+		path: '/restaurant/:id',
+		component: 'restaurant-view'
+	},
+	{
+		path: '(.*)',
+		component: 'not-found-view'
 	}
 ]);
 

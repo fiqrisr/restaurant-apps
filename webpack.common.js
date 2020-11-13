@@ -21,7 +21,8 @@ module.exports = {
 			'@': srcPath('.'),
 			components: srcPath('scripts/components'),
 			pages: srcPath('scripts/views'),
-			data: srcPath('scripts/data')
+			data: srcPath('scripts/data'),
+			router: srcPath('scripts/router')
 		},
 		extensions: ['.ts', '.tsx', '.js']
 	},
@@ -60,7 +61,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/templates/index.html'),
-			filename: 'index.html'
+			filename: 'index.html',
+			base: '/'
 		}),
 		new CopyWebpackPlugin({
 			patterns: [

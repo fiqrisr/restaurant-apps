@@ -19,7 +19,8 @@
 			"@/*": ["src/*"],
 			"components/*": ["src/scripts/components/*"],
 			"pages/*": ["src/scripts/views/*"],
-			"data/*": ["src/scripts/data/*"]
+			"data/*": ["src/scripts/data/*"],
+			"router": ["src/scripts/router"]
 		}
 	},
 	"include": ["src/scripts/**/*"],
