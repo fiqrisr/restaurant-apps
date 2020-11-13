@@ -19,7 +19,9 @@ module.exports = {
 	resolve: {
 		alias: {
 			'@': srcPath('.'),
-			components: srcPath('scripts/components')
+			components: srcPath('scripts/components'),
+			pages: srcPath('scripts/views'),
+			data: srcPath('scripts/data')
 		},
 		extensions: ['.ts', '.tsx', '.js']
 	},
