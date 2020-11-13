@@ -22,20 +22,24 @@ a {
 }
 
 .rating {
-	align-items: center;
 	background: var(--accent-1);
 	box-sizing: border-box;
 	color: var(--neutral-2);
-	display: grid;
+	display: flex;
 	font-weight: 700;
-	gap: 5px;
-	grid-template-columns: 1fr 1fr;
-	justify-items: center;
-	padding: 5px 10px;
+	padding: 7px 10px;
 	position: absolute;
 	right: 0;
 	top: 0;
 	z-index: 1;
+}
+
+.icon {
+	margin-right: 8px;
+}
+
+.rating-value {
+	margin-top: 1px;
 }
 
 .thumbnail {

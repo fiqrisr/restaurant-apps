@@ -1,7 +1,6 @@
 import { LitElement, html, customElement, TemplateResult, CSSResult } from 'lit-element';
 import { styles } from '@/scripts/config';
 import { restaurants } from '@/scripts/data/restaurant';
-// import { rzRestaurantCard } from 'components/restaurant-card';
 
 const restaurantTypes = [
 	'casual dining',
