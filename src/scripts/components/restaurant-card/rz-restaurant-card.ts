@@ -30,7 +30,7 @@ export class rzRestaurantCard extends LitElement {
 
 	render(): TemplateResult {
 		return html`
-		<a href="${this.id}">
+		<a href="/restaurant/${this.id}">
 			<div class="thumbnail">
 				<div class="rating">
 					<div class="icon"><rz-icon icon="star" size="s" color="var(--neutral-2)"></rz-icon></div>
