@@ -48,8 +48,4 @@ export class rzRestaurantCard extends LitElement {
 			</a>
 		`;
 	}
-
-	attributeChangedCallback(name: string, oldval: string, newval: string): void {
-		super.attributeChangedCallback(name, oldval, newval);
-	}
 }

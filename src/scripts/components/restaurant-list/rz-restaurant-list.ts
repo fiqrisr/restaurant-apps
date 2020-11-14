@@ -1,6 +1,6 @@
-import { LitElement, html, customElement, TemplateResult, CSSResult } from 'lit-element';
-import { styles } from '@/scripts/config';
-import { restaurants } from '@/scripts/data/restaurant';
+import { LitElement, html, customElement, TemplateResult, CSSResult, property } from 'lit-element';
+import config, { styles } from '@/scripts/config';
+import Restaurant from 'models/restaurant';
 
 const restaurantTypes = [
 	'casual dining',
@@ -13,17 +13,25 @@ const restaurantTypes = [
 
 @customElement('rz-restaurant-list')
 export class rzRestaurantList extends LitElement {
+	@property({ type: Object, reflect: true })
+	restaurantList!: Array<Restaurant>;
+
+	constructor() {
+		super();
+		this.restaurantList = [];
+	}
+
 	static get styles(): CSSResult {
 		return styles.restaurantList;
 	}
 
 	render(): TemplateResult {
 		return html`<slot>
-			${restaurants.map(
+			${this.restaurantList.map(
 				(restaurant) => html`
 					<rz-restaurant-card
 						.id="${restaurant.id}"
-						.image="${restaurant.pictureId}"
+						.image="${config.API_BASE_IMAGE_URL + 'small/' + restaurant.pictureId}"
 						.category="${restaurantTypes[
 							Math.floor(Math.random() * restaurantTypes.length)
 						]}"
@@ -35,10 +43,6 @@ export class rzRestaurantList extends LitElement {
 				`
 			)}
 		</slot>`;
-	}
-
-	attributeChangedCallback(name: string, oldval: string, newval: string): void {
-		super.attributeChangedCallback(name, oldval, newval);
 	}
 
 	truncateText(text: string, maxLength: number): string {

@@ -9,6 +9,7 @@ import 'components/app-bar';
 import 'components/button';
 import 'components/icon';
 import 'components/text';
+import 'components/spinner';
 import 'components/restaurant-card';
 import 'components/restaurant-list';
 import 'components/nav-menu';
