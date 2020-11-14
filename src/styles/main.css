@@ -139,6 +139,11 @@ body {
 	top: 20px;
 }
 
+.page-title {
+	font-size: 3.4rem;
+	text-align: center;
+}
+
 .section {
 	padding: 30px;
 }

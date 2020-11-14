@@ -1,6 +1,5 @@
 import { LitElement, customElement, TemplateResult, html, property } from 'lit-element';
-import axios from 'redaxios';
-import config from '@/scripts/config';
+import { getRestaurantList } from 'data/restaurant';
 import RestaurantList from 'models/restaurant-list';
 
 @customElement('home-view')
@@ -37,19 +36,14 @@ export class HomeView extends LitElement {
 
 	connectedCallback(): void {
 		super.connectedCallback();
-		this.getRestaurantListData();
+
+		getRestaurantList().then((response) => {
+			this.restaurantList = response;
+			this.requestUpdate();
+		});
 	}
 
 	createRenderRoot(): Element | ShadowRoot {
 		return this;
-	}
-
-	async getRestaurantListData(): Promise<void> {
-		const response = await axios.get(`${config.API_BASE_URL}/list`);
-		this.restaurantList = <RestaurantList>{
-			count: response.data.count,
-			restaurants: response.data.restaurants
-		};
-		this.requestUpdate();
 	}
 }

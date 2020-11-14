@@ -5,4 +5,14 @@ export default interface Restaurant {
 	pictureId: number;
 	city: string;
 	rating: number;
+	categories: Array<{ name: string }>;
+	menus: {
+		foods: Array<{ name: string }>;
+		drinks: Array<{ name: string }>;
+	};
+	customerReviews: Array<{
+		name: string;
+		review: string;
+		date: string;
+	}>;
 }
