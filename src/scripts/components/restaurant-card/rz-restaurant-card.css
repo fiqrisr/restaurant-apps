@@ -1,6 +1,6 @@
 :host {
 	background: #fff;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	box-shadow: var(--shadow-card);
 	display: block;
 	min-width: 270px;
 	position: relative;
@@ -9,7 +9,7 @@
 }
 
 :host(:hover) {
-	box-shadow: var(--shadow-2);
+	box-shadow: var(--shadow-card-hover);
 }
 
 :host(:hover) .thumbnail img {
@@ -90,8 +90,14 @@ a {
 	margin: 0;
 }
 
+/* stylelint-disable */
 .description {
+	-webkit-box-orient: vertical;
 	color: #666;
+	display: -webkit-box;
 	font-size: 14px;
+	-webkit-line-clamp: 4;
 	line-height: 1.8em;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

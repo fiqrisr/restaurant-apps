@@ -31,21 +31,17 @@ export class rzRestaurantList extends LitElement {
 				(restaurant) => html`
 					<rz-restaurant-card
 						.id="${restaurant.id}"
-						.image="${config.API_BASE_IMAGE_URL + 'small/' + restaurant.pictureId}"
+						.image="${config.API.BASE_IMAGE_URL + 'small/' + restaurant.pictureId}"
 						.category="${restaurantTypes[
 							Math.floor(Math.random() * restaurantTypes.length)
 						]}"
 						.title="${restaurant.name}"
 						.subTitle="${restaurant.city}"
-						.description="${this.truncateText(restaurant.description, 150)}"
+						.description="${restaurant.description}"
 						.rating="${restaurant.rating}"
 					></rz-restaurant-card>
 				`
 			)}
 		</slot>`;
-	}
-
-	truncateText(text: string, maxLength: number): string {
-		return text.length >= maxLength ? text.substring(0, maxLength - 3) + '...' : text;
 	}
 }
