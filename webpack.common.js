@@ -21,9 +21,10 @@ module.exports = {
 			'@': srcPath('.'),
 			components: srcPath('scripts/components'),
 			pages: srcPath('scripts/views'),
-			data: srcPath('scripts/data'),
 			models: srcPath('scripts/models'),
-			router: srcPath('scripts/router')
+			router: srcPath('scripts/router'),
+			store: srcPath('scripts/store'),
+			utils: srcPath('scripts/utils')
 		},
 		extensions: ['.ts', '.tsx', '.js']
 	},

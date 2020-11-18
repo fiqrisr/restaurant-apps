@@ -19,9 +19,10 @@
 			"@/*": ["src/*"],
 			"components/*": ["src/scripts/components/*"],
 			"pages/*": ["src/scripts/views/*"],
-			"data/*": ["src/scripts/data/*"],
 			"models/*": ["src/scripts/models/*"],
-			"router": ["src/scripts/router"]
+			"router": ["src/scripts/router"],
+			"store": ["src/scripts/store"],
+			"utils/*": ["src/scripts/utils/*"]
 		}
 	},
 	"include": ["src/scripts/**/*"],
