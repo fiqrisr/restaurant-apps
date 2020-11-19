@@ -19,5 +19,5 @@ import 'components/hero-image';
 // Pages
 import 'pages/home-view';
 import 'pages/favorite-view';
-import 'pages/restaurant-view';
+//import 'pages/restaurant-view';
 import 'pages/not-found-view';

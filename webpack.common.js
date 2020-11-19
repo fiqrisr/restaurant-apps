@@ -20,6 +20,7 @@ module.exports = {
 		alias: {
 			'@': srcPath('.'),
 			components: srcPath('scripts/components'),
+			lib: srcPath('scripts/lib'),
 			pages: srcPath('scripts/views'),
 			models: srcPath('scripts/models'),
 			router: srcPath('scripts/router'),

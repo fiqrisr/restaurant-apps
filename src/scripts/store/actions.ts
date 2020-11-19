@@ -1,0 +1,15 @@
+import Store from 'lib/store';
+import axios from 'utils/axios';
+import config from '@/scripts/config';
+
+export default {
+	getRestaurantList(context: Store): void {
+		context.commit('SET_LOADING_STATUS', true);
+		axios.get(config.API.ENDPOINT.RESTAURANT_LIST).then((response) => {
+			// Filter only count and restaurants field
+			const filtered = (({ count, restaurants }) => ({ count, restaurants }))(response.data);
+			context.commit('ADD_TO_RESTAURANT_LIST', filtered);
+			context.commit('SET_LOADING_STATUS', false);
+		});
+	}
+};

@@ -1,15 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import PubSub from './pubsub';
 
 type StoreType = {
-	actions: Record<string, (store: Store, payload: unknown) => void>;
+	actions: Record<string, (store: Store, payload?: unknown) => void>;
 	mutations: Record<string, (state: Record<string, unknown>, payload: unknown) => void>;
-	state: Record<string, unknown>;
+	state: Record<string, any>;
 };
 
 export default class Store {
-	actions: Record<string, (store: Store, payload: unknown) => void>;
+	actions: Record<string, (store: Store, payload?: unknown) => void>;
 	mutations: Record<string, (state: Record<string, unknown>, payload: unknown) => void>;
-	state: Record<string, unknown>;
+	state: Record<string, any>;
 	events: PubSub;
 	status: string;
 
@@ -31,7 +32,7 @@ export default class Store {
 				console.log(`stateChange: ${key}: ${value}`);
 				this.events.publish('stateChange', this.state);
 
-				if (this.status !== 'mutations')
+				if (this.status !== 'mutation')
 					console.warn(`You should use a mutation to set ${key}`);
 
 				this.status = 'resting';
@@ -40,7 +41,7 @@ export default class Store {
 		});
 	}
 
-	dispatch(actionKey: string, payload: unknown): boolean {
+	dispatch(actionKey: string, payload?: unknown): boolean {
 		if (typeof this.actions[actionKey] !== 'function') {
 			console.error(`Action "${actionKey} doesn't exist.`);
 			return false;

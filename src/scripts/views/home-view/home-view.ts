@@ -1,20 +1,8 @@
-import { LitElement, customElement, TemplateResult, html, property } from 'lit-element';
-import { getRestaurantList } from 'data/restaurant';
-import RestaurantList from 'models/restaurant-list';
+import { LitElement, customElement, TemplateResult, html } from 'lit-element';
+import store from 'store';
 
 @customElement('home-view')
 export class HomeView extends LitElement {
-	@property({ type: Object, reflect: true })
-	restaurantList!: RestaurantList;
-
-	constructor() {
-		super();
-		this.restaurantList = {
-			count: 0,
-			restaurants: []
-		};
-	}
-
 	render(): TemplateResult {
 		return html` <rz-hero-image image="../public/images/heros/hero-image.jpg">
 				<h1 slot="title">Find Your Favorite Restaurant</h1>
@@ -26,10 +14,10 @@ export class HomeView extends LitElement {
 
 			<section id="main" class="container section">
 				<h2 class="section-title">Explore Restaurant</h2>
-				${this.restaurantList.count === 0
+				${store.state.loading
 					? html`<rz-spinner></rz-spinner>`
 					: html`<rz-restaurant-list
-							.restaurantList="${this.restaurantList.restaurants}"
+							.restaurantList="${store.state.restaurantList.restaurants}"
 					  ></rz-restaurant-list>`}
 			</section>`;
 	}
@@ -37,10 +25,8 @@ export class HomeView extends LitElement {
 	connectedCallback(): void {
 		super.connectedCallback();
 
-		getRestaurantList().then((response) => {
-			this.restaurantList = response;
-			this.requestUpdate();
-		});
+		store.events.subscribe('stateChange', () => this.requestUpdate());
+		store.dispatch('getRestaurantList');
 	}
 
 	createRenderRoot(): Element | ShadowRoot {

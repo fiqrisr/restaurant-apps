@@ -18,6 +18,7 @@
 		"paths": {
 			"@/*": ["src/*"],
 			"components/*": ["src/scripts/components/*"],
+			"lib/*": ["src/scripts/lib/*"],
 			"pages/*": ["src/scripts/views/*"],
 			"models/*": ["src/scripts/models/*"],
 			"router": ["src/scripts/router"],

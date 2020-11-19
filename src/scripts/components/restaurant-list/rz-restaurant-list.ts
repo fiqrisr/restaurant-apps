@@ -1,5 +1,6 @@
 import { LitElement, html, customElement, TemplateResult, CSSResult, property } from 'lit-element';
 import config, { styles } from '@/scripts/config';
+import store from 'store';
 import Restaurant from 'models/restaurant';
 
 const restaurantTypes = [
@@ -43,5 +44,11 @@ export class rzRestaurantList extends LitElement {
 				`
 			)}
 		</slot>`;
+	}
+
+	connectedCallback(): void {
+		super.connectedCallback();
+
+		this.restaurantList = store.state.restaurantList.restaurants;
 	}
 }
