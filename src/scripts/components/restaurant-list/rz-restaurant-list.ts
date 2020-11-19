@@ -48,7 +48,6 @@ export class rzRestaurantList extends LitElement {
 
 	connectedCallback(): void {
 		super.connectedCallback();
-
 		this.restaurantList = store.state.restaurantList.restaurants;
 	}
 }

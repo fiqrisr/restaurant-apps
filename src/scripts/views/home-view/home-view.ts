@@ -24,7 +24,6 @@ export class HomeView extends LitElement {
 
 	connectedCallback(): void {
 		super.connectedCallback();
-
 		store.events.subscribe('stateChange', () => this.requestUpdate());
 		store.dispatch('getRestaurantList');
 	}

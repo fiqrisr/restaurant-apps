@@ -11,5 +11,13 @@ export default {
 			context.commit('ADD_TO_RESTAURANT_LIST', filtered);
 			context.commit('SET_LOADING_STATUS', false);
 		});
+	},
+
+	getRestaurantData(context: Store, id: string): void {
+		context.commit('SET_LOADING_STATUS', true);
+		axios.get(config.API.ENDPOINT.RESTAURANT_DETAIL(id)).then((response) => {
+			context.commit('SET_CURRENT_RESTAURANT_DATA', response.data.restaurant);
+			context.commit('SET_LOADING_STATUS', false);
+		});
 	}
 };

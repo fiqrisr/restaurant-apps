@@ -1,4 +1,5 @@
 export default {
 	loading: false,
-	restaurantList: {}
+	restaurantList: {},
+	currentRestaurantData: {}
 };

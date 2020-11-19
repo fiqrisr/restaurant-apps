@@ -9,5 +9,10 @@ export default {
 	ADD_TO_RESTAURANT_LIST(state: any, payload: any) {
 		state.restaurantList = payload;
 		return state;
+	},
+
+	SET_CURRENT_RESTAURANT_DATA(state: any, payload: any) {
+		state.currentRestaurantData = payload;
+		return state;
 	}
 };
