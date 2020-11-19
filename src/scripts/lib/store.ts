@@ -2,14 +2,14 @@
 import PubSub from './pubsub';
 
 type StoreType = {
-	actions: Record<string, (store: Store, payload?: unknown) => void>;
-	mutations: Record<string, (state: Record<string, unknown>, payload: unknown) => void>;
+	actions: Record<string, (store: Store, payload?: any) => void>;
+	mutations: Record<string, (state: Record<string, unknown>, payload: any) => void>;
 	state: Record<string, any>;
 };
 
 export default class Store {
-	actions: Record<string, (store: Store, payload?: unknown) => void>;
-	mutations: Record<string, (state: Record<string, unknown>, payload: unknown) => void>;
+	actions: Record<string, (store: Store, payload?: any) => void>;
+	mutations: Record<string, (state: Record<string, unknown>, payload: any) => void>;
 	state: Record<string, any>;
 	events: PubSub;
 	status: string;

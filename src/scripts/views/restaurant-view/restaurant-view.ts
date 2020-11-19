@@ -1,15 +1,20 @@
 import { LitElement, customElement, TemplateResult, html } from 'lit-element';
 import router from 'router';
 import store from 'store';
+import config from '@/scripts/config';
 
 @customElement('restaurant-view')
 export class RestaurantView extends LitElement {
 	render(): TemplateResult {
-		return html`<section id="main" class="container section">
+		return html`
 			${store.state.loading
 				? html`<rz-spinner></rz-spinner>`
-				: html`<h1 class="page-title">${store.state.currentRestaurantData.name}</h1>`}
-		</section>`;
+				: html`<rz-hero-image
+						image="${config.API.BASE_IMAGE_URL +
+						'large/' +
+						store.state.currentRestaurantData.pictureId}"
+				  ></rz-hero-image>`}
+		`;
 	}
 
 	connectedCallback(): void {
