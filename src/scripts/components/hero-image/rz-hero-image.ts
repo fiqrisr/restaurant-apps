@@ -6,6 +6,12 @@ export class rzHeroImage extends LitElement {
 	@property({ type: String, reflect: true })
 	image!: string;
 
+	@property({ type: String, reflect: true })
+	gradient!: string;
+
+	@property({ type: String, reflect: true })
+	height!: string;
+
 	static get styles(): CSSResult {
 		return styles.heroImage;
 	}
@@ -17,11 +23,13 @@ export class rzHeroImage extends LitElement {
 				<slot name="tagline"></slot>
 				<slot></slot>
 			</div>
+			<div><slot name="full"></slot></div>
 		</div>`;
 	}
 
 	firstUpdated(): void {
-		const hero = <HTMLElement>this.shadowRoot?.querySelector('.hero-image');
-		hero.style.backgroundImage = `var(--gradient-1),url("${this.image}")`;
+		const heroImage = <HTMLElement>this.shadowRoot?.querySelector('.hero-image');
+		heroImage.style.backgroundImage = `var(--${this.gradient}),url("${this.image}")`;
+		heroImage.style.height = this.height;
 	}
 }
