@@ -52,7 +52,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				exclude: path.resolve(__dirname, 'src/scripts'),
+				exclude: path.resolve(__dirname, 'src/scripts/components'),
 				use: [MiniCssExtractPlugin.loader, 'css-loader']
 			},
 			{

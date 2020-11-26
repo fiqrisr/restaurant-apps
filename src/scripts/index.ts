@@ -1,5 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
+
+// Styles
 import '@/styles/main.css';
+import '@/scripts/views/restaurant-view/restaurant-view.css';
 
 // Router
 import '@/scripts/router';

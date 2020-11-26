@@ -1,0 +1,10 @@
+/* stylelint-disable selector-class-pattern  */
+
+.restaurant__page {
+	padding-top: 70px;
+}
+
+.restaurant__images {
+	display: grid;
+	min-width: 100%;
+}
