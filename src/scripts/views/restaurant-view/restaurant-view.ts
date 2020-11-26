@@ -9,16 +9,21 @@ export class RestaurantView extends LitElement {
 		return html`
 			${store.state.loading
 				? html`<rz-spinner></rz-spinner>`
-				: html`<div class="container restaurant__page">
-						<div class="restaurant__images">
-							<img
-								class="restaurant__images--big"
-								src="${config.API.BASE_IMAGE_URL +
-								'large/' +
-								store.state.currentRestaurantData.pictureId}"
-							/>
-						</div>
-				  </div>`}
+				: html`<rz-hero-image
+						image="${config.API.BASE_IMAGE_URL +
+						'large/' +
+						store.state.currentRestaurantData.pictureId}"
+						gradient="gradient-2"
+						height="400px"
+				  >
+						<rz-restaurant-header
+							slot="full"
+							.title=${store.state.currentRestaurantData.name}
+							.address=${store.state.currentRestaurantData.address +
+							', ' +
+							store.state.currentRestaurantData.city}
+						></rz-restaurant-header>
+				  </rz-hero-image>`}
 		`;
 	}
 

@@ -1,0 +1,14 @@
+:host {
+	background-color: rgba(0, 0, 0, 0.7);
+	bottom: 40px;
+	color: var(--neutral-2);
+	left: 40px;
+	padding: 25px;
+	position: absolute;
+}
+
+h1 {
+	margin: 0;
+	margin-bottom: 20px;
+	padding: 0;
+}

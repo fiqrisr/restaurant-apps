@@ -18,6 +18,7 @@ import 'components/restaurant-list';
 import 'components/nav-menu';
 import 'components/nav-item';
 import 'components/hero-image';
+import 'components/restaurant-header';
 
 // Pages
 import 'pages/home-view';

@@ -10,6 +10,7 @@ import navItem from 'components/nav-item/rz-nav-item.css';
 import heroImage from 'components/hero-image/rz-hero-image.css';
 import restaurantCard from 'components/restaurant-card/rz-restaurant-card.css';
 import restaurantList from 'components/restaurant-list/rz-restaurant-list.css';
+import restaurantHeader from 'components/restaurant-header/restaurant-header.css';
 
 export const styles = {
 	shared,
@@ -22,5 +23,6 @@ export const styles = {
 	restaurantList,
 	navMenu,
 	navItem,
-	heroImage
+	heroImage,
+	restaurantHeader
 };
