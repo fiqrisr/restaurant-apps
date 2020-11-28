@@ -25,10 +25,4 @@ export const shared = css`
 			width: 1170px;
 		}
 	}
-
-	@media (min-width: 1600px) {
-		.container {
-			width: 1500px;
-		}
-	}
 `;

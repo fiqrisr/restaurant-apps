@@ -1,0 +1,7 @@
+:host {
+	background-color: rgba(35, 47, 52, 0.12);
+	border-radius: 20px;
+	color: rgb(35, 47, 52);
+	padding: 10px 18px;
+	text-align: center;
+}

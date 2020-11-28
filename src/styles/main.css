@@ -17,8 +17,8 @@ body {
 	--accent-2: rgb(208, 68, 54);
 	--accent-3: rgb(236, 112, 99);
 
-	--gradient-color-1: rgba(170, 7, 107, 0.35);
-	--gradient-color-2: rgba(97, 4, 95, 0.35);
+	--gradient-color-1: rgba(170, 7, 107, 0.8);
+	--gradient-color-2: rgba(97, 4, 95, 0.8);
 	--gradient-color-3: rgba(65, 65, 65, 0.7);
 	--gradient-color-4: rgba(0, 0, 0, 0.7);
 
@@ -122,12 +122,6 @@ body {
 	}
 }
 
-@media (min-width: 1600px) {
-	.container {
-		width: 1500px;
-	}
-}
-
 .skip-link {
 	background-color: var(--accent-1);
 	color: var(--neutral-2);
@@ -150,12 +144,20 @@ body {
 }
 
 .section {
-	padding: 30px;
+	padding: 30px 0;
 }
 
 .section-title {
 	font-size: 3.2rem;
 	text-align: center;
+}
+
+.sub-section {
+	margin-bottom: 30px;
+}
+
+.sub-section-title {
+	font-size: 2rem;
 }
 
 main {

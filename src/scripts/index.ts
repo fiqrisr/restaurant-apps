@@ -19,6 +19,7 @@ import 'components/nav-menu';
 import 'components/nav-item';
 import 'components/hero-image';
 import 'components/restaurant-header';
+import 'components/chip';
 
 // Pages
 import 'pages/home-view';
