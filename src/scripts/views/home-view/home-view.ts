@@ -16,14 +16,16 @@ export class HomeView extends LitElement {
 				</div>
 			</rz-hero-image>
 
-			<section id="main" class="container section">
-				<h2 class="section-title">Explore Restaurant</h2>
-				${store.state.loading
-					? html`<rz-spinner></rz-spinner>`
-					: html`<rz-restaurant-list
-							.restaurantList="${store.state.restaurantList.restaurants}"
-					  ></rz-restaurant-list>`}
-			</section>`;
+			<div id="main" class="container">
+				<section class=" section">
+					<h2 class="section-title">Explore Restaurant</h2>
+					${store.state.loading
+						? html`<rz-spinner></rz-spinner>`
+						: html`<rz-restaurant-list
+								.restaurantList="${store.state.restaurantList.restaurants}"
+						  ></rz-restaurant-list>`}
+				</section>
+			</div>`;
 	}
 
 	connectedCallback(): void {
