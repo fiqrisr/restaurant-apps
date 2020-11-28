@@ -78,3 +78,11 @@
 :host([icon='location'])::before {
 	content: '\\e805';
 }
+
+:host([icon='food'])::before {
+	content: '\\e815';
+}
+
+:host([icon='beer'])::before {
+	content: '\\e806';
+}
