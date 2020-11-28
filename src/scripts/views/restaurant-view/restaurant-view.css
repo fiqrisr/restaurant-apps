@@ -1,13 +1,6 @@
-/* stylelint-disable selector-class-pattern  */
-
-.restaurant__page {
-	padding-top: 70px;
-}
-
-.restaurant__images {
-	display: grid;
-	max-height: 400px;
-	overflow: hidden;
+.restaurant-detail {
+	margin: 0 auto;
+	max-width: 700px;
 }
 
 .categories {
@@ -18,4 +11,23 @@
 
 .categories rz-chip {
 	margin-right: 12px;
+}
+
+.restaurant-menu > ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+@media (min-width: 768px) {
+	.restaurant-menu > ul {
+		column-count: 2;
+	}
+}
+
+.restaurant-menu > ul > li {
+	margin-bottom: 24px;
+}
+
+.menu-icon {
+	padding-right: 20px;
 }

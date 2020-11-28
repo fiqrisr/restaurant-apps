@@ -12,13 +12,7 @@ export class rzNavMenu extends LitElement {
 
 	render(): TemplateResult {
 		return html`<nav>
-			<button
-				class="hamburger"
-				type="button"
-				aria-label="Menu"
-				aria-controls="navigation"
-				@click="${this.toggleNav}"
-			>
+			<button class="hamburger" type="button" @click="${this.toggleNav}">
 				<span class="hamburger-box">
 					<span class="hamburger-inner"></span>
 				</span>
