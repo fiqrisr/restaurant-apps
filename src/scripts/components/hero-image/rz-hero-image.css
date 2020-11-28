@@ -28,3 +28,7 @@ slot[name='tagline'] {
 	font-size: 2rem;
 	line-height: 2.4rem;
 }
+
+slot[name='full'] {
+	position: relative;
+}

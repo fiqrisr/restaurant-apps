@@ -1,5 +1,5 @@
 // @ts-nocheck
-import shared from './sharedStyles.css';
+import { shared } from './sharedStyles';
 import appBar from 'components/app-bar/rz-app-bar.css';
 import button from 'components/button/rz-button.css';
 import icon from 'components/icon/rz-icon.css';

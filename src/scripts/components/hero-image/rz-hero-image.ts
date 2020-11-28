@@ -1,4 +1,11 @@
-import { LitElement, html, customElement, TemplateResult, CSSResult, property } from 'lit-element';
+import {
+	LitElement,
+	html,
+	customElement,
+	TemplateResult,
+	property,
+	CSSResultArray
+} from 'lit-element';
 import { styles } from '@/scripts/config';
 
 @customElement('rz-hero-image')
@@ -12,8 +19,8 @@ export class rzHeroImage extends LitElement {
 	@property({ type: String, reflect: true })
 	height!: string;
 
-	static get styles(): CSSResult {
-		return styles.heroImage;
+	static get styles(): CSSResultArray {
+		return [styles.shared, styles.heroImage];
 	}
 
 	render(): TemplateResult {
@@ -23,7 +30,7 @@ export class rzHeroImage extends LitElement {
 				<slot name="tagline"></slot>
 				<slot></slot>
 			</div>
-			<div><slot name="full"></slot></div>
+			<div class="container"><slot name="full"></slot></div>
 		</div>`;
 	}
 
