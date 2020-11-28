@@ -13,3 +13,13 @@ h1 {
 	margin-bottom: 20px;
 	padding: 0;
 }
+
+.address {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.location-icon {
+	margin-right: 7px;
+}

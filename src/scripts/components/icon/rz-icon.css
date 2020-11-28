@@ -74,3 +74,7 @@
 :host([icon='heart-empty'])::before {
 	content: '\\2661';
 }
+
+:host([icon='location'])::before {
+	content: '\\e805';
+}

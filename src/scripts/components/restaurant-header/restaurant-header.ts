@@ -18,6 +18,9 @@ export class rzRestaurantHeader extends LitElement {
 
 	render(): TemplateResult {
 		return html`<h1>${this.title}</h1>
-			<rz-text color="var(--neutral-2)" size="body-1">${this.address}</rz-text>`;
+			<div class="address">
+				<rz-icon icon="location" size="m" color="white" class="location-icon"></rz-icon>
+				<rz-text color="var(--neutral-2)" size="body-1">${this.address}</rz-text>
+			</div>`;
 	}
 }
