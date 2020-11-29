@@ -7,6 +7,7 @@
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "yarn run type-check -- --watch",
 		"start-dev": "webpack-dev-server --config webpack.dev.js --history-api-fallback",
+		"start": "yarn run start-dev",
 		"build:types": "tsc --declaration --emitDeclarationOnly",
 		"build:js": "webpack --config webpack.prod.js",
 		"build": "yarn run build:types && yarn run build:js",

@@ -122,6 +122,12 @@ body {
 	}
 }
 
+@media (min-width: 1500px) {
+	.container {
+		width: 1450px;
+	}
+}
+
 .skip-link {
 	background-color: var(--accent-1);
 	color: var(--neutral-2);

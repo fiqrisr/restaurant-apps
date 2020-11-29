@@ -2,7 +2,7 @@
 	background: #fff;
 	box-shadow: var(--shadow-card);
 	display: block;
-	min-width: 270px;
+	min-width: 280px;
 	position: relative;
 	transition: all 0.3s linear 0s;
 	z-index: 1;

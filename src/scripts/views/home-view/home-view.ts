@@ -5,7 +5,7 @@ import store from 'store';
 export class HomeView extends LitElement {
 	render(): TemplateResult {
 		return html` <rz-hero-image
-				image="../public/images/heros/hero-image.jpg"
+				image="../public/images/hero-image.jpg"
 				gradient="gradient-1"
 				height="500px"
 			>

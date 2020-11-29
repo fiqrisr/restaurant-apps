@@ -3,13 +3,13 @@
 	max-width: 700px;
 }
 
-.categories {
+.restaurant-categories {
 	align-items: center;
 	display: flex;
 	flex-direction: row;
 }
 
-.categories rz-chip {
+.restaurant-categories rz-chip {
 	margin-right: 12px;
 }
 

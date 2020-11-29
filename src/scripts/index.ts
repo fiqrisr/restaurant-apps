@@ -20,6 +20,7 @@ import 'components/nav-item';
 import 'components/hero-image';
 import 'components/restaurant-header';
 import 'components/chip';
+import 'components/review-card';
 
 // Pages
 import 'pages/home-view';

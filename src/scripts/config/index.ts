@@ -9,7 +9,8 @@ const config = {
 			RESTAURANT_DETAIL: (id: string): string => `detail/${id}`,
 			POST_REVIEW: 'review'
 		}
-	}
+	},
+	DEFAULT_AVATAR: '../../public/images/avatar.svg'
 };
 
 export default config;
