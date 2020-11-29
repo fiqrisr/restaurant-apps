@@ -92,19 +92,28 @@ export class RestaurantView extends LitElement {
 								<section class="section">
 									<h2 class="section-title">Reviews</h2>
 									<div class="restaurant-reviews">
-										${store.state.currentRestaurantData.customerReviews.map(
-											(review: {
-												name: string;
-												date: string;
-												review: string;
-											}) => {
-												return html`<rz-review-card
-													.name=${review.name}
-													.date=${review.date}
-													.review=${review.review}
-												></rz-review-card>`;
-											}
-										)}
+										${store.state.currentRestaurantData.customerReviews
+											.slice(0, 4)
+											.map(
+												(review: {
+													name: string;
+													date: string;
+													review: string;
+												}) => {
+													return html`<rz-review-card
+														tabindex="0"
+														.name=${review.name}
+														.date=${review.date}
+														.review=${review.review}
+													></rz-review-card>`;
+												}
+											)}
+									</div>
+									<div class="sub-section">
+										<h3 class="sub-section-title">Write a review</h3>
+										<div class="add-review">
+											<add-review-form></add-review-form>
+										</div>
 									</div>
 								</section>
 							</div>

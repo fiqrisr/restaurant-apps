@@ -19,5 +19,18 @@ export default {
 			context.commit('SET_CURRENT_RESTAURANT_DATA', response.data.restaurant);
 			context.commit('SET_LOADING_STATUS', false);
 		});
+	},
+
+	addReview(context: Store, review: { id: string; name: string; review: string }): void {
+		axios
+			.post(config.API.ENDPOINT.POST_REVIEW, review, {
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				}
+			})
+			.then((response) => {
+				context.commit('SET_COSTUMER_REVIEWS', response.data.customerReviews);
+			});
 	}
 };

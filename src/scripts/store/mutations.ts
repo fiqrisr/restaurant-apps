@@ -14,5 +14,10 @@ export default {
 	SET_CURRENT_RESTAURANT_DATA(state: any, payload: any) {
 		state.currentRestaurantData = payload;
 		return state;
+	},
+
+	SET_COSTUMER_REVIEWS(state: any, payload: any) {
+		state.currentRestaurantData.customerReviews = payload;
+		return state;
 	}
 };

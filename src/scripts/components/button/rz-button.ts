@@ -12,6 +12,9 @@ export class rzButton extends LitElement {
 	@property({ type: String, reflect: true })
 	href!: string;
 
+	@property({ type: Boolean, reflect: true })
+	submit = false;
+
 	static get styles(): CSSResult {
 		return styles.button;
 	}
@@ -19,8 +22,8 @@ export class rzButton extends LitElement {
 	render(): TemplateResult {
 		return html`
 			${this.isLink
-				? html` <a href="${this.href}">${this.label}</a> `
-				: html`<button>${this.label}</button>`}
+				? html`<a href="${this.href}">${this.label}</a>`
+				: html`<button type="${this.submit ? 'submit' : ''}">${this.label}</button>`}
 		`;
 	}
 }

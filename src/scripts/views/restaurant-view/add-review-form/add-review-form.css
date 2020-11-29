@@ -1,0 +1,10 @@
+.review-input {
+	border: 1px solid rgb(35, 47, 52);
+	border-radius: 10px;
+	display: block;
+	font: inherit;
+	margin-bottom: 20px;
+	padding: 15px;
+	resize: none;
+	width: 100%;
+}
