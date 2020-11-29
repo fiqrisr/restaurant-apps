@@ -23,7 +23,7 @@ export class rzReviewCard extends LitElement {
 			</div>
 			<div class="review">
 				<rz-text>${this.name}</rz-text>
-				<rz-text>${this.date}</rz-text>
+				<rz-text size="body-2">${this.date}</rz-text>
 				<rz-text>${this.review}</rz-text>
 			</div>
 		`;

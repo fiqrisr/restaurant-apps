@@ -1,6 +1,11 @@
 :host {
 	align-items: center;
+	background-color: rgba(35, 47, 52, 0.1);
+	border-radius: 20px;
+	color: rgb(35, 47, 52);
 	display: flex;
+	margin-bottom: 25px;
+	padding: 20px 10px;
 }
 
 .avatar {
@@ -15,6 +20,18 @@
 	width: 100%;
 }
 
-div > rz-text {
+.review {
+	margin-left: 15px;
+}
+
+.review > rz-text {
 	display: block;
+}
+
+.review > rz-text:nth-child(1) {
+	font-weight: 600;
+}
+
+.review > rz-text:nth-child(3) {
+	margin-top: 10px;
 }
