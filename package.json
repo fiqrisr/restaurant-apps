@@ -66,6 +66,7 @@
 	"dependencies": {
 		"@vaadin/router": "^1.7.2",
 		"lit-element": "^2.4.0",
+		"node-snackbar": "^0.1.16",
 		"redaxios": "^0.3.0",
 		"regenerator-runtime": "^0.13.5"
 	}

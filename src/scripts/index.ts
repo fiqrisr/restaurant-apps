@@ -6,6 +6,8 @@ import '@/scripts/views/restaurant-view/restaurant-view.css';
 import '@/scripts/views/restaurant-view/add-review-form/add-review-form.css';
 import '@/scripts/views/restaurant-view/review-list/review-list.css';
 
+import 'node-snackbar/dist/snackbar.min.css';
+
 // Router
 import '@/scripts/router';
 
