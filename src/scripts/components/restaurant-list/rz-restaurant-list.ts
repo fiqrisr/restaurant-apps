@@ -1,6 +1,5 @@
-import { LitElement, html, customElement, TemplateResult, CSSResult } from 'lit-element';
+import { LitElement, html, customElement, TemplateResult, CSSResult, property } from 'lit-element';
 import config, { styles } from '@/scripts/config';
-import store from 'store';
 import Restaurant from 'models/restaurant';
 
 const restaurantTypes = [
@@ -14,13 +13,16 @@ const restaurantTypes = [
 
 @customElement('rz-restaurant-list')
 export class rzRestaurantList extends LitElement {
+	@property({ type: Array, reflect: true })
+	data!: [];
+
 	static get styles(): CSSResult {
 		return styles.restaurantList;
 	}
 
 	render(): TemplateResult {
 		return html`<slot>
-			${store.state.restaurantList.restaurants.map(
+			${this.data.map(
 				(restaurant: Restaurant) => html`
 					<rz-restaurant-card
 						.id="${restaurant.id}"
