@@ -3,6 +3,8 @@ import 'regenerator-runtime'; /* for async await transpile */
 // Styles
 import '@/styles/main.css';
 import '@/scripts/views/restaurant-view/restaurant-view.css';
+import '@/scripts/views/restaurant-view/add-review-form/add-review-form.css';
+import '@/scripts/views/restaurant-view/review-list/review-list.css';
 
 // Router
 import '@/scripts/router';
@@ -26,4 +28,6 @@ import 'components/review-card';
 import 'pages/home-view';
 import 'pages/favorite-view';
 import 'pages/restaurant-view';
+import 'pages/restaurant-view/add-review-form';
+import 'pages/restaurant-view/review-list';
 import 'pages/not-found-view';

@@ -17,7 +17,7 @@ export default {
 	},
 
 	SET_COSTUMER_REVIEWS(state: any, payload: any) {
-		state.currentRestaurantData.customerReviews = payload;
+		state.currentRestaurantData.customerReviews.push(payload[payload.length - 1]);
 		return state;
 	}
 };
