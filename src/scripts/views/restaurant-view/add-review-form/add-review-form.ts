@@ -66,6 +66,8 @@ export class AddReviewForm extends LitElement {
 
 			name.value = '';
 			review.value = '';
+
+			Snackbar.show({ pos: 'bottom-center', duration: 4000, text: 'Submit review success' });
 		}
 	}
 }
