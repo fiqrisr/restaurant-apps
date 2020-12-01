@@ -12,12 +12,14 @@ export default {
 	},
 
 	SET_CURRENT_RESTAURANT_DATA(state: any, payload: any) {
+		payload.customerReviews.splice(0, payload.customerReviews.length - 4);
 		state.currentRestaurantData = payload;
 		return state;
 	},
 
 	SET_COSTUMER_REVIEWS(state: any, payload: any) {
-		state.currentRestaurantData.customerReviews.push(payload[payload.length - 1]);
+		const newList = payload.slice(-4);
+		state.currentRestaurantData.customerReviews = [...newList];
 		return state;
 	}
 };
