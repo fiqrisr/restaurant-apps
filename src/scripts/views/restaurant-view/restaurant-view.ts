@@ -2,6 +2,7 @@ import { LitElement, customElement, TemplateResult, html } from 'lit-element';
 import router from 'router';
 import store from 'store';
 import config from '@/scripts/config';
+import { changeSkipToContentLink } from 'utils/skipToContent';
 
 @customElement('restaurant-view')
 export class RestaurantView extends LitElement {
@@ -112,6 +113,7 @@ export class RestaurantView extends LitElement {
 		super.connectedCallback();
 		store.events.subscribe('stateChange', () => this.requestUpdate());
 		store.dispatch('getRestaurantData', router.location.params.id);
+		changeSkipToContentLink(document.URL);
 	}
 
 	createRenderRoot(): Element | ShadowRoot {

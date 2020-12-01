@@ -4,16 +4,16 @@ import store from 'store';
 @customElement('review-list')
 export class ReviewList extends LitElement {
 	render(): TemplateResult {
-		return html`${store.state.currentRestaurantData.customerReviews
-			.slice(-4)
-			.map((review: { name: string; date: string; review: string }) => {
+		return html`${store.state.currentRestaurantData.customerReviews.map(
+			(review: { name: string; date: string; review: string }) => {
 				return html`<rz-review-card
 					tabindex="0"
 					.name=${review.name}
 					.date=${review.date}
 					.review=${review.review}
 				></rz-review-card>`;
-			})}`;
+			}
+		)}`;
 	}
 
 	createRenderRoot(): Element | ShadowRoot {

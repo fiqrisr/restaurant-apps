@@ -1,5 +1,6 @@
 import { LitElement, customElement, TemplateResult, html } from 'lit-element';
 import store from 'store';
+import { changeSkipToContentLink } from 'utils/skipToContent';
 
 @customElement('favorite-view')
 export class FavoriteView extends LitElement {
@@ -12,6 +13,10 @@ export class FavoriteView extends LitElement {
 				></rz-restaurant-list>
 			</section>
 		</div>`;
+	}
+
+	connectedCallback(): void {
+		changeSkipToContentLink(document.URL);
 	}
 
 	createRenderRoot(): Element | ShadowRoot {
