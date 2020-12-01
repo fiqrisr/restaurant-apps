@@ -22,7 +22,7 @@ export class rzAppBar extends LitElement {
 				<div class="brand">
 					<img src="${this.logo}" alt="${this.label} brand" class="logo" />
 					<div class="label">
-						<a href="#">${this.label}</a>
+						<a href="/">${this.label}</a>
 					</div>
 				</div>
 				<slot name="right"></slot>

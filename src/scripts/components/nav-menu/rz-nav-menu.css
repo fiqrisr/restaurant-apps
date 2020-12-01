@@ -114,6 +114,16 @@ ul {
 	z-index: 50;
 }
 
+ul > li {
+	margin: 0;
+	transition: var(--transition-1);
+}
+
+ul > li:hover {
+	background-color: var(--accent-3);
+	border-radius: 7px;
+}
+
 .overlay {
 	background-color: rgba(0, 0, 0, 0.3);
 	display: none;

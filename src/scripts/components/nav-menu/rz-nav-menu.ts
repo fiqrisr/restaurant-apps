@@ -1,8 +1,11 @@
-import { LitElement, html, customElement, TemplateResult, CSSResult } from 'lit-element';
+import { LitElement, html, customElement, TemplateResult, CSSResult, property } from 'lit-element';
 import { styles } from '@/scripts/config';
 
 @customElement('rz-nav-menu')
 export class rzNavMenu extends LitElement {
+	@property({ type: Number, reflect: true })
+	listCount = 0;
+
 	navButton!: HTMLElement;
 	navList!: HTMLElement;
 
@@ -12,13 +15,15 @@ export class rzNavMenu extends LitElement {
 
 	render(): TemplateResult {
 		return html`<nav>
-			<button class="hamburger" type="button" @click="${this.toggleNav}">
+			<button class="hamburger" type="button" aria-label="Menu" @click="${this.toggleNav}">
 				<span class="hamburger-box">
 					<span class="hamburger-inner"></span>
 				</span>
 			</button>
 			<ul>
-				<slot @click="${this.closeNav}"></slot>
+				${[...Array(this.listCount).keys()].map((num) => {
+					return html`<li><slot name=${num} @click="${this.closeNav}"></slot></li>`;
+				})}
 			</ul>
 			<div @click="${this.toggleNav}" class="overlay"></div>
 		</nav>`;
