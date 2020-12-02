@@ -177,6 +177,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
+	margin-top: 40px;
 	padding: 20px 0;
 	text-align: center;
 }
