@@ -2,6 +2,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 
 // Styles
 import '@/styles/main.css';
+import '@/styles/fonts.css';
 import '@/scripts/views/restaurant-view/restaurant-view.css';
 import '@/scripts/views/restaurant-view/add-review-form/add-review-form.css';
 import '@/scripts/views/restaurant-view/review-list/review-list.css';
