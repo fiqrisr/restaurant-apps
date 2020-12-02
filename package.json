@@ -24,7 +24,6 @@
 		"@babel/plugin-proposal-object-rest-spread": "^7.11.0",
 		"@babel/preset-env": "^7.11.5",
 		"@babel/preset-typescript": "^7.10.4",
-		"@bundle-analyzer/webpack-plugin": "^0.5.1",
 		"@typescript-eslint/eslint-plugin": "^4.0.1",
 		"@typescript-eslint/parser": "^4.0.1",
 		"@typescript-eslint/typescript-estree": "^4.0.1",
@@ -61,7 +60,9 @@
 		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.0",
 		"webpack-merge": "^5.0.9",
-		"whatwg-fetch": "^3.2.0"
+		"webpack-pwa-manifest": "^4.3.0",
+		"whatwg-fetch": "^3.2.0",
+		"workbox-webpack-plugin": "^6.0.0"
 	},
 	"dependencies": {
 		"@vaadin/router": "^1.7.2",
