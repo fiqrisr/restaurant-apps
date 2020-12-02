@@ -47,10 +47,10 @@ export default class Store {
 			return false;
 		}
 
-		console.groupCollapsed(`ACTION: ${actionKey}`);
+		// console.groupCollapsed(`ACTION: ${actionKey}`);
 		this.status = 'action';
 		this.actions[actionKey](this, payload);
-		console.groupEnd();
+		// console.groupEnd();
 		return true;
 	}
 
