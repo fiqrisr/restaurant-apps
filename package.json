@@ -65,6 +65,7 @@
 	},
 	"dependencies": {
 		"@vaadin/router": "^1.7.2",
+		"idb": "^5.0.8",
 		"lit-element": "^2.4.0",
 		"node-snackbar": "^0.1.16",
 		"redaxios": "^0.3.0",

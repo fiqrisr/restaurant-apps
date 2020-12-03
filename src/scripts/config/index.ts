@@ -10,7 +10,12 @@ const config = {
 			POST_REVIEW: 'review'
 		}
 	},
-	DEFAULT_AVATAR: '../../public/images/avatar.svg'
+	DEFAULT_AVATAR: '../../public/images/avatar.svg',
+	DATABASE: {
+		NAME: 'restozoo-db',
+		VERSION: 1,
+		OBJECT_STORE_NAME: 'restaurants'
+	}
 };
 
 export default config;
