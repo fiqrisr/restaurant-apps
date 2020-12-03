@@ -7,6 +7,10 @@
 	position: absolute;
 }
 
+:host > div {
+	display: flex;
+}
+
 h1 {
 	line-height: normal;
 	margin: 0;
@@ -14,12 +18,33 @@ h1 {
 	padding: 0;
 }
 
-.address {
+.second-line {
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 7px;
+}
+
+.rating .bookmark {
 	align-items: center;
 	display: flex;
 	flex-direction: row;
 }
 
-.location-icon {
+.bookmark {
+	cursor: pointer;
+	display: inline-block;
+	padding: 9px;
+}
+
+.bookmark:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.icon {
 	margin-right: 7px;
+}
+
+.address .icon,
+.bookmark .icon {
+	margin-left: 3px;
 }

@@ -23,6 +23,7 @@ export class RestaurantView extends LitElement {
 								.address=${store.state.currentRestaurantData.address +
 								', ' +
 								store.state.currentRestaurantData.city}
+								.rating=${store.state.currentRestaurantData.rating}
 							></rz-restaurant-header>
 						</rz-hero-image>
 						<div id="main" class="container">

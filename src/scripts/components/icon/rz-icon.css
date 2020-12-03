@@ -86,3 +86,11 @@
 :host([icon='beer'])::before {
 	content: '\\e806';
 }
+
+:host([icon='bookmark'])::before {
+	content: '\\e807';
+}
+
+:host([icon='bookmark-empty'])::before {
+	content: '\\f097';
+}
