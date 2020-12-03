@@ -71,7 +71,8 @@ module.exports = {
 			template: path.resolve(__dirname, 'src/templates/index.html'),
 			filename: 'index.html',
 			scriptLoading: 'defer',
-			base: '/'
+			base: '/',
+			minify: false
 		}),
 		new WorkboxPlugin.InjectManifest({
 			swSrc: path.resolve(__dirname, 'src/sw.js')

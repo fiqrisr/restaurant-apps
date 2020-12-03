@@ -27,6 +27,7 @@ export default {
 			.post(config.API.ENDPOINT.POST_REVIEW, review, {
 				headers: {
 					'Content-Type': 'application/json',
+					'X-Auth-Token': '12345',
 					Accept: 'application/json'
 				}
 			})
