@@ -1,8 +1,17 @@
 import { LitElement, html, customElement, TemplateResult, CSSResult, property } from 'lit-element';
 import { styles } from '@/scripts/config';
+import store from 'store';
+import {
+	getRestaurant,
+	deleteRestaurant,
+	putRestaurant
+} from '@/scripts/db/favorite-restaurant-idb';
 
 @customElement('rz-restaurant-header')
 export class rzRestaurantHeader extends LitElement {
+	@property({ type: String, reflect: true })
+	id!: string;
+
 	@property({ type: String, reflect: true })
 	title!: string;
 
@@ -37,12 +46,22 @@ export class rzRestaurantHeader extends LitElement {
 						color="white"
 						class="icon"
 					></rz-icon>
-					<rz-text color="white" size="body-1">Add to Favorite</rz-text>
+					<rz-text color="white" size="body-1">Add to Favorites</rz-text>
 				</div>
 			</div>`;
 	}
 
-	toggleBookmark(): void {
+	async firstUpdated(): Promise<void> {
+		const data = await getRestaurant(this.id);
+
+		if (data) this.isBookmarked = true;
+		this.requestUpdate();
+	}
+
+	async toggleBookmark(): Promise<void> {
+		if (this.isBookmarked) await deleteRestaurant(store.state.currentRestaurantData.id);
+		else await putRestaurant(store.state.currentRestaurantData);
+
 		this.isBookmarked = !this.isBookmarked;
 		this.requestUpdate();
 	}

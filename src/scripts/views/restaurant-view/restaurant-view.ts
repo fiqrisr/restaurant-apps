@@ -19,6 +19,7 @@ export class RestaurantView extends LitElement {
 						>
 							<rz-restaurant-header
 								slot="full"
+								.id=${store.state.currentRestaurantData.id}
 								.title=${store.state.currentRestaurantData.name}
 								.address=${store.state.currentRestaurantData.address +
 								', ' +
