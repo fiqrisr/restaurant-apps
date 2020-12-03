@@ -1,6 +1,7 @@
 import Store from 'lib/store';
 import axios from 'utils/axios';
 import config from '@/scripts/config';
+import { getAllRestaurants } from '@/scripts/db/favorite-restaurant-idb';
 
 export default {
 	getRestaurantList(context: Store): void {
@@ -32,5 +33,13 @@ export default {
 			.then((response) => {
 				context.commit('SET_COSTUMER_REVIEWS', response.data.customerReviews);
 			});
+	},
+
+	getFavorites(context: Store): void {
+		context.commit('SET_LOADING_STATUS', true);
+		getAllRestaurants().then((data) => {
+			context.commit('SET_FAVORITES', data);
+			context.commit('SET_LOADING_STATUS', false);
+		});
 	}
 };

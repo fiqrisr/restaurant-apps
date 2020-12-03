@@ -6,6 +6,7 @@ import {
 	deleteRestaurant,
 	putRestaurant
 } from '@/scripts/db/favorite-restaurant-idb';
+import Snackbar from 'node-snackbar';
 
 @customElement('rz-restaurant-header')
 export class rzRestaurantHeader extends LitElement {
@@ -59,8 +60,13 @@ export class rzRestaurantHeader extends LitElement {
 	}
 
 	async toggleBookmark(): Promise<void> {
-		if (this.isBookmarked) await deleteRestaurant(store.state.currentRestaurantData.id);
-		else await putRestaurant(store.state.currentRestaurantData);
+		if (this.isBookmarked) {
+			await deleteRestaurant(store.state.currentRestaurantData.id);
+			Snackbar.show({ pos: 'bottom-center', duration: 3500, text: 'Removed from favorites' });
+		} else {
+			await putRestaurant(store.state.currentRestaurantData);
+			Snackbar.show({ pos: 'bottom-center', duration: 3500, text: 'Added to favorites' });
+		}
 
 		this.isBookmarked = !this.isBookmarked;
 		this.requestUpdate();

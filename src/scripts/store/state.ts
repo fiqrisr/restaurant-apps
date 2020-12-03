@@ -1,5 +1,6 @@
 export default {
 	loading: false,
 	restaurantList: {},
-	currentRestaurantData: {}
+	currentRestaurantData: {},
+	favorites: []
 };

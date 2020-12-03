@@ -8,15 +8,26 @@ export class FavoriteView extends LitElement {
 		return html`<div id="main" class="container">
 			<section class="section">
 				<h2 class="section-title">Favorites</h2>
-				<rz-restaurant-list
-					.data="${store.state.restaurantList.restaurants.slice(-6)}"
-				></rz-restaurant-list>
+				${store.state.loading
+					? html`<rz-spinner></rz-spinner>`
+					: html`${store.state.favorites.length > 0
+							? html`<rz-restaurant-list
+									.data=${store.state.favorites}
+							  ></rz-restaurant-list>`
+							: html`<div class="empty-text">Empty Bookmark</div>`}`}
 			</section>
 		</div>`;
 	}
 
 	connectedCallback(): void {
+		super.connectedCallback();
+		store.events.subscribe('stateChange', () => this.requestUpdate());
+		store.dispatch('getFavorites');
+	}
+
+	firstUpdated(): void {
 		changeSkipToContentLink(document.URL);
+		this.requestUpdate();
 	}
 
 	createRenderRoot(): Element | ShadowRoot {

@@ -21,5 +21,10 @@ export default {
 		const newList = payload.slice(-4);
 		state.currentRestaurantData.customerReviews = [...newList];
 		return state;
+	},
+
+	SET_FAVORITES(state: any, payload: any) {
+		state.favorites = payload;
+		return state;
 	}
 };

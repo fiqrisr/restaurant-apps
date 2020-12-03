@@ -4,9 +4,10 @@ import { register } from './register-sw';
 // Styles
 import '@/styles/main.css';
 import '@/styles/fonts.css';
-import '@/scripts/views/restaurant-view/restaurant-view.css';
-import '@/scripts/views/restaurant-view/add-review-form/add-review-form.css';
-import '@/scripts/views/restaurant-view/review-list/review-list.css';
+import 'pages/favorite-view/favorite-view.css';
+import 'pages/restaurant-view/restaurant-view.css';
+import 'pages/restaurant-view/add-review-form/add-review-form.css';
+import 'pages/restaurant-view/review-list/review-list.css';
 
 import 'node-snackbar/dist/snackbar.min.css';
 
