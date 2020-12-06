@@ -1,11 +1,12 @@
 /* eslint-disable no-undef */
-
 import { precacheAndRoute } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { ExpirationPlugin } from 'workbox-expiration';
-import { clientsClaim } from 'workbox-core';
+import { clientsClaim, skipWaiting } from 'workbox-core';
 import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
+
+precacheAndRoute(self.__WB_MANIFEST);
 
 const BASE_API_URL = 'https://restaurant-api.dicoding.dev/';
 
@@ -60,7 +61,5 @@ registerRoute(
 	})
 );
 
-self.skipWaiting();
+skipWaiting();
 clientsClaim();
-
-precacheAndRoute(self.__WB_MANIFEST, { ignoreUrlParametersMatching: [/.*/] });

@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 const path = require('path');
 
 function srcPath(subdir) {
@@ -74,9 +73,6 @@ module.exports = {
 			base: '/',
 			minify: false
 		}),
-		new WorkboxPlugin.InjectManifest({
-			swSrc: path.resolve(__dirname, 'src/sw.js')
-		}),
 		new CopyWebpackPlugin({
 			patterns: [
 				{
@@ -85,10 +81,6 @@ module.exports = {
 				},
 				{
 					from: path.resolve(__dirname, '_redirects'),
-					to: path.resolve(__dirname, 'dist')
-				},
-				{
-					from: path.resolve(__dirname, 'src/manifest.json'),
 					to: path.resolve(__dirname, 'dist')
 				}
 			]
