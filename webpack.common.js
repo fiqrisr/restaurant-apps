@@ -70,8 +70,7 @@ module.exports = {
 			template: path.resolve(__dirname, 'src/templates/index.html'),
 			filename: 'index.html',
 			scriptLoading: 'defer',
-			base: '/',
-			minify: false
+			base: '/'
 		}),
 		new CopyWebpackPlugin({
 			patterns: [

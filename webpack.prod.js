@@ -3,7 +3,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
@@ -15,7 +15,7 @@ module.exports = merge(common, {
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
-		new WorkboxPlugin.InjectManifest({
+		new InjectManifest({
 			swSrc: path.resolve(__dirname, 'src/sw.js'),
 			swDest: 'sw.js',
 			exclude: [/types/, '_redirects'],
@@ -31,7 +31,6 @@ module.exports = merge(common, {
 			scope: '/',
 			start_url: '/',
 			orientation: 'any',
-			inject: true,
 			ios: true,
 			icons: [
 				{
@@ -41,10 +40,16 @@ module.exports = merge(common, {
 					purpose: 'maskable'
 				},
 				{
-					src: path.resolve(__dirname, 'src/icons/icon-512x512.png'),
+					src: path.resolve(__dirname, 'src/icons/icon-1024x1024.png'),
 					destination: 'public/icons/ios',
-					sizes: [120, 152, 167, 180],
+					sizes: [120, 152, 167, 180, 1024],
 					ios: true
+				},
+				{
+					src: path.resolve(__dirname, 'src/icons/icon-1024x1024.png'),
+					destination: 'public/icons/ios',
+					sizes: 1024,
+					ios: 'startup'
 				}
 			]
 		})
