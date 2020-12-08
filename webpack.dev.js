@@ -10,7 +10,7 @@ module.exports = merge(common, {
 	devServer: {
 		contentBase: path.resolve(__dirname, 'dist'),
 		compress: false,
-		inline: true
+		historyApiFallback: true
 	},
 	plugins: [new CleanTerminalPlugin()]
 });

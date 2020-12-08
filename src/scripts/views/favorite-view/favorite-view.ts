@@ -14,7 +14,7 @@ export class FavoriteView extends LitElement {
 							? html`<rz-restaurant-list
 									.data=${store.state.favorites}
 							  ></rz-restaurant-list>`
-							: html`<div class="empty-text">Empty Bookmark</div>`}`}
+							: html`<div class="bg-text">Empty Bookmark</div>`}`}
 			</section>
 		</div>`;
 	}

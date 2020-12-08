@@ -6,7 +6,7 @@
 	"scripts": {
 		"type-check": "tsc --noEmit",
 		"type-check:watch": "yarn run type-check -- --watch",
-		"start-dev": "webpack-dev-server --config webpack.dev.js --history-api-fallback",
+		"start-dev": "webpack-cli serve --config webpack.dev.js",
 		"start": "yarn run start-dev",
 		"build:types": "tsc --declaration --emitDeclarationOnly",
 		"build:js": "webpack --config webpack.prod.js",
@@ -27,6 +27,7 @@
 		"@typescript-eslint/eslint-plugin": "^4.0.1",
 		"@typescript-eslint/parser": "^4.0.1",
 		"@typescript-eslint/typescript-estree": "^4.0.1",
+		"@webpack-cli/init": "^1.0.3",
 		"babel-loader": "^8.1.0",
 		"clean-terminal-webpack-plugin": "^3.0.0",
 		"clean-webpack-plugin": "^3.0.0",

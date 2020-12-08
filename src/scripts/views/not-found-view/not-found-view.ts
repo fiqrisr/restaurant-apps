@@ -4,7 +4,7 @@ import { LitElement, customElement, TemplateResult, html } from 'lit-element';
 export class NotFoundView extends LitElement {
 	render(): TemplateResult {
 		return html`<section id="main" class="container section">
-			<h2 class="section-title">404 Not Found</h2>
+			<div class="bg-text">404 Not Found</div>
 		</section>`;
 	}
 
