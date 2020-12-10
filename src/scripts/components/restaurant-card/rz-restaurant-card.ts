@@ -36,7 +36,7 @@ export class rzRestaurantCard extends LitElement {
 					<div class="icon"><rz-icon icon="star" size="s" color="var(--neutral-2)"></rz-icon></div>
 					<div class="rating-value">${this.rating}</div>
 				</div>
-				<img src="${this.image}" alt="${this.title}"/>
+				<img loading="lazy" src="${this.image}" alt="${this.title}"/>
 				<div class="category">${this.category}</div>
 			</div>
 
