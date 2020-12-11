@@ -28,14 +28,6 @@ export class rzHeroImage extends LitElement {
 
 	render(): TemplateResult {
 		return html` <div class="hero-image">
-			${this.fallbackImage !== undefined
-				? html`<picture style="display:none;">
-						<source srcset="${this.image}" />
-						<source srcset="${this.fallbackImage}" />
-						<img src="${this.fallbackImage}" />
-				  </picture>`
-				: html``}
-
 			<div class="hero-text">
 				<slot name="title"></slot>
 				<slot name="tagline"></slot>
@@ -49,19 +41,12 @@ export class rzHeroImage extends LitElement {
 		const heroImage = <HTMLElement>this.shadowRoot?.querySelector('.hero-image');
 		heroImage.style.height = this.height;
 
-		if (this.fallbackImage !== undefined) {
-			const pictureEl = <HTMLElement>this.shadowRoot?.querySelector('picture');
-
-			if (pictureEl.getElementsByTagName('img')[0].src !== undefined) {
-				heroImage.style.backgroundImage = `var(--${
-					this.gradient
-				}),url("${pictureEl.getElementsByTagName('img')[0].src.toString()}")`;
-			} else {
+		Modernizr.on('webp', (result: unknown) => {
+			if (result)
 				heroImage.style.backgroundImage = `var(--${this.gradient}),url("${this.image}")`;
-			}
-		} else {
-			heroImage.style.backgroundImage = `var(--${this.gradient}),url("${this.image}")`;
-		}
+			else
+				heroImage.style.backgroundImage = `var(--${this.gradient}),url("${this.fallbackImage}")`;
+		});
 
 		this.requestUpdate();
 	}
