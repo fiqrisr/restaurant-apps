@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const path = require('path');
 
 function srcPath(subdir) {
@@ -92,8 +93,14 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/templates/index.html'),
 			filename: 'index.html',
-			scriptLoading: 'defer',
-			base: '/'
+			base: '/',
+			inject: 'body'
+		}),
+		new PreloadWebpackPlugin({
+			rel: 'preload',
+			as: 'font',
+			include: 'allAssets',
+			fileWhitelist: [/\.(woff2?|eot|ttf|otf)(\?.*)?$/i]
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
