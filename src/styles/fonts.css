@@ -33,3 +33,12 @@
 	src: url('../fonts/pacifico.woff2') format('woff2'),
 		url('../fonts/pacifico.woff') format('woff');
 }
+
+@font-face {
+	font-display: swap;
+	font-family: 'fontello';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/fontello.woff2') format('woff2'),
+		url('../fonts/fontello.woff') format('woff');
+}
