@@ -98,9 +98,13 @@ module.exports = {
 		}),
 		new PreloadWebpackPlugin({
 			rel: 'preload',
-			as: 'font',
+			as(entry) {
+				if (/\.css$/.test(entry)) return 'style';
+				if (/\.(woff2?|eot|ttf|otf)$/.test(entry)) return 'font';
+				return 'script';
+			},
 			include: 'allAssets',
-			fileWhitelist: [/\.(woff2?|eot|ttf|otf)(\?.*)?$/i]
+			fileWhitelist: [/\.(woff2?|eot|ttf|otf|css)(\?.*)?$/i]
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
