@@ -22,6 +22,9 @@ export class rzHeroImage extends LitElement {
 	@property({ type: String, reflect: true })
 	fallbackImage!: string;
 
+	@property({ type: Array, reflect: true })
+	responsiveImages!: Array<{ image: string; fallback: string; width: number; maxWidth: string }>;
+
 	static get styles(): CSSResultArray {
 		return [styles.shared, styles.heroImage];
 	}
@@ -33,7 +36,23 @@ export class rzHeroImage extends LitElement {
 				${this.fallbackImage !== undefined
 					? html` <source class="hero-image" srcset="${this.fallbackImage}" /> `
 					: html``}
-				<img class="hero-image" src="${this.image}" alt="Restaurant" />
+				${this.responsiveImages !== undefined
+					? html`${this.responsiveImages.map((image) => {
+							return html`<source
+									class="hero-image"
+									sizes="(max-width: ${image.maxWidth}px) ${image.width}w"
+									srcset="${image.image} ${image.width}w"
+								/>
+								${image.fallback !== undefined
+									? html`<source
+											class="hero-image"
+											sizes="(max-width: ${image.maxWidth}px) ${image.width}w"
+											srcset="${image.fallback} ${image.width}w"
+									  />`
+									: html``} `;
+					  })}`
+					: html``}
+				<img class="hero-image" src="${this.fallbackImage}" alt="Restaurant" />
 			</picture>
 			<div class="overlay"></div>
 			<div class="hero-text">

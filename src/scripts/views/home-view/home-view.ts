@@ -7,6 +7,14 @@ export class HomeView extends LitElement {
 		return html` <rz-hero-image
 				image="../public/images/hero-image--large.webp"
 				fallbackImage="../public/images/hero-image--large.jpg"
+				.responsiveImages=${[
+					{
+						image: '../public/images/hero-image--small.webp',
+						fallback: '../public/images/hero-image--small.jpg',
+						width: 675,
+						maxWidth: 600
+					}
+				]}
 				gradient="gradient-1"
 				height="500px"
 			>
