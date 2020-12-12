@@ -27,7 +27,15 @@ export class rzHeroImage extends LitElement {
 	}
 
 	render(): TemplateResult {
-		return html` <div class="hero-image">
+		return html` <div class="hero-container">
+			<picture>
+				<source class="hero-image" srcset="${this.image}" />
+				${this.fallbackImage !== undefined
+					? html` <source class="hero-image" srcset="${this.fallbackImage}" /> `
+					: html``}
+				<img class="hero-image" src="${this.image}" alt="Restaurant" />
+			</picture>
+			<div class="overlay"></div>
 			<div class="hero-text">
 				<slot name="title"></slot>
 				<slot name="tagline"></slot>
@@ -38,15 +46,10 @@ export class rzHeroImage extends LitElement {
 	}
 
 	firstUpdated(): void {
-		const heroImage = <HTMLElement>this.shadowRoot?.querySelector('.hero-image');
-		heroImage.style.height = this.height;
-
-		Modernizr.on('webp', (result: unknown) => {
-			if (result)
-				heroImage.style.backgroundImage = `var(--${this.gradient}),url("${this.image}")`;
-			else
-				heroImage.style.backgroundImage = `var(--${this.gradient}),url("${this.fallbackImage}")`;
-		});
+		const heroContainer = <HTMLElement>this.shadowRoot?.querySelector('.hero-container');
+		heroContainer.style.height = this.height;
+		const overlay = <HTMLElement>this.shadowRoot?.querySelector('.overlay');
+		overlay.style.backgroundImage = `var(--${this.gradient})`;
 
 		this.requestUpdate();
 	}

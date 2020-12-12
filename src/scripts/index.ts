@@ -1,6 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import { register } from './register-sw';
-import 'utils/webp-detection.js';
 
 // Styles
 import '@/styles/main.css';

@@ -24,8 +24,7 @@
 			"router": ["src/scripts/router"],
 			"store": ["src/scripts/store"],
 			"utils/*": ["src/scripts/utils/*"]
-		},
-		"typeRoots": ["./src/scripts/@types", "./node_modules/@types"]
+		}
 	},
 	"include": ["src/scripts/**/*"],
 	"exclude": ["node_modules", "dist"]
