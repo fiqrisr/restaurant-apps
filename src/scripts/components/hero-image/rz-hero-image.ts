@@ -40,14 +40,14 @@ export class rzHeroImage extends LitElement {
 					? html`${this.responsiveImages.map((image) => {
 							return html`<source
 									class="hero-image"
-									sizes="(max-width: ${image.maxWidth}px) ${image.width}w"
-									srcset="${image.image} ${image.width}w"
+									media="(max-width: ${image.maxWidth}px)"
+									srcset="${image.image}"
 								/>
 								${image.fallback !== undefined
 									? html`<source
 											class="hero-image"
-											sizes="(max-width: ${image.maxWidth}px) ${image.width}w"
-											srcset="${image.fallback} ${image.width}w"
+											media="(max-width: ${image.maxWidth}px)"
+											srcset="${image.fallback}"
 									  />`
 									: html``} `;
 					  })}`

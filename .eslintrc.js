@@ -2,7 +2,7 @@ module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
-		ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+		ecmaVersion: 12, // Allows for the parsing of modern ECMAScript features
 		sourceType: 'module' // Allows for the use of imports
 	},
 	plugins: ['@typescript-eslint', 'prettier'],
