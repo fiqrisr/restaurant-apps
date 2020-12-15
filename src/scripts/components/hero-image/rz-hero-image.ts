@@ -20,10 +20,9 @@ export class rzHeroImage extends LitElement {
 	height!: string;
 
 	@property({ type: String, reflect: true })
-	fallbackImage!: string;
-
+	maxWidth!: string;
 	@property({ type: Array, reflect: true })
-	responsiveImages!: Array<{ image: string; fallback: string; width: number; maxWidth: string }>;
+	responsiveImages!: Array<{ url: string; width: number }>;
 
 	static get styles(): CSSResultArray {
 		return [styles.shared, styles.heroImage];
@@ -32,27 +31,24 @@ export class rzHeroImage extends LitElement {
 	render(): TemplateResult {
 		return html` <div class="hero-container">
 			<picture>
-				<source class="hero-image" srcset="${this.image}" />
-				${this.fallbackImage !== undefined
-					? html` <source class="hero-image" srcset="${this.fallbackImage}" /> `
-					: html``}
 				${this.responsiveImages !== undefined
-					? html`${this.responsiveImages.map((image) => {
-							return html`<source
-									class="hero-image"
-									media="(max-width: ${image.maxWidth}px)"
-									srcset="${image.image}"
-								/>
-								${image.fallback !== undefined
-									? html`<source
-											class="hero-image"
-											media="(max-width: ${image.maxWidth}px)"
-											srcset="${image.fallback}"
-									  />`
-									: html``} `;
-					  })}`
-					: html``}
-				<img class="hero-image" src="${this.fallbackImage}" alt="Restaurant" />
+					? html`<img
+							class="hero-image"
+							sizes="(max-width: ${this.maxWidth}) 100vw, ${this.maxWidth}"
+							srcset="
+								${this.responsiveImages.map(
+									(image) => `${image.url} ${image.width}w,`
+								)}
+							"
+							src="${this.image}"
+							alt="Restaurant"
+					  />`
+					: html`<img
+							class="hero-image"
+							sizes="(max-width: ${this.maxWidth}) 100vw, ${this.maxWidth}"
+							src="${this.image}"
+							alt="Restaurant"
+					  />`}
 			</picture>
 			<div class="overlay"></div>
 			<div class="hero-text">

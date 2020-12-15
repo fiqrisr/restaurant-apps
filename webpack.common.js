@@ -42,7 +42,7 @@ module.exports = {
 			automaticNameDelimiter: '~',
 			enforceSizeThreshold: 50000,
 			cacheGroups: {
-				defaultVendors: {
+				vendors: {
 					test: /[\\/]node_modules[\\/]/,
 					priority: -10
 				},
@@ -86,6 +86,14 @@ module.exports = {
 				options: {
 					outputPath: 'fonts'
 				}
+			},
+			{
+				test: /\.(jpg|jpeg|png)$/,
+				loader: 'file-loader',
+				options: {
+					outputPath: 'public/images/hero',
+					name: '[name].[contenthash:8].[ext]'
+				}
 			}
 		]
 	},
@@ -110,7 +118,10 @@ module.exports = {
 			patterns: [
 				{
 					from: path.resolve(__dirname, 'src/public/'),
-					to: path.resolve(__dirname, 'dist/public')
+					to: path.resolve(__dirname, 'dist/public'),
+					globOptions: {
+						ignore: ['**/hero']
+					}
 				},
 				{
 					from: path.resolve(__dirname, '_redirects'),

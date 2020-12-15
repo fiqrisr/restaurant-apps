@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { shared } from './sharedStyles';
 import appBar from 'components/app-bar/rz-app-bar.css';
 import button from 'components/button/rz-button.css';

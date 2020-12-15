@@ -15,7 +15,8 @@ module.exports = merge(common, {
 	plugins: [
 		new BundleAnalyzerPlugin({
 			analyzerMode: 'static',
-			reportFilename: '../bundle_report.html'
+			reportFilename: '../bundle_report.html',
+			openAnalyzer: false
 		}),
 		...PWAPlugin,
 		new CleanWebpackPlugin()
