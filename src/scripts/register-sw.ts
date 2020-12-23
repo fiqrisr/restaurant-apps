@@ -76,7 +76,7 @@ async function registerValidSW(swUrl: string) {
 				console.log('Success register sw.js');
 				registration.onupdatefound = () => {
 					const installingWorker = registration.installing;
-					if (installingWorker == null) {
+					if (installingWorker === null) {
 						return;
 					}
 				};
